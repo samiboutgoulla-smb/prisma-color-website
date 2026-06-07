@@ -44,7 +44,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-chromia",
     name: "CHROMIA",
-    pdfUrl: "/fiches/chromia.pdf", // <--- Le chemin vers votre fichier
+    pdfUrl: "/prisma-color-website/fiches/chromia.pdf", // <--- Le chemin vers votre fichier
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
@@ -68,7 +68,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-cira-mineralia",
     name: "CIRA MINERALIA",
-    pdfUrl: "/fiches/CiraMineralia.pdf", // <--- Le chemin vers votre fichier
+    pdfUrl: "/prisma-color-website/fiches/CiraMineralia.pdf", // <--- Le chemin vers votre fichier
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
