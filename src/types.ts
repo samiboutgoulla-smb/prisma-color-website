@@ -44,7 +44,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-chromia",
     name: "CHROMIA",
-    pdfUrl: "/prismacolorwebsite/fiches/chromia.pdf", // <--- Le chemin vers votre fichier
+    pdfUrl: "/fiches/chromia.pdf", // <--- Le chemin vers votre fichier
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
@@ -55,7 +55,7 @@ export const PRODUCTS_DB: Product[] = [
     features: ["Bon pouvoir couvrant. ", "Très facile à appliquer"],
     dryingTime: "Hors poussières: 1H, Recouvrable : 4H",
     finishes: ["Marbré", "satiné"],
-    image: "/prismacolorwebsite/images/Chromia.png",
+    image: "/images/Chromia.png",
     fallbackImage: "/src/assets/images/Chromia.png",
     dilution: "5 à 10 % avec d'eau à 25 °C",
     density: "1.6 ± 0.05 kg/l",
@@ -68,7 +68,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-cira-mineralia",
     name: "CIRA MINERALIA",
-    pdfUrl: "/prismacolorwebsite/fiches/CiraMineralia.pdf", // <--- Le chemin vers votre fichier
+    pdfUrl: "/fiches/CiraMineralia.pdf", // <--- Le chemin vers votre fichier
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
@@ -79,7 +79,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec : 2h, Hors poussière : 1H",
     finishes: ["Mat", "Nacré"],
     features: ["Sans odeur", "Très facile à appliquer.", "Disponible  en mate et nacré"],
-    image: "/prismacolorwebsite/images/CiraMineralia.png",
+    image: "/images/CiraMineralia.png",
     fallbackImage: "/src/assets/images/paint_bucket_decor_1780770364551.png",
     dilution: "Prêt à l'emploi. Dilution à l'eau 5% max.",
     density: "  110 ± 5 KU à 25°C. ",
@@ -92,7 +92,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-fluorina",
     name: "FLUORINA",
-    pdfUrl: "/prismacolorwebsite/fiches/Fluorina.pdf", // <--- Le chemin vers votre fichier
+    pdfUrl: "/fiches/Fluorina.pdf", // <--- Le chemin vers votre fichier
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
@@ -103,7 +103,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec  : 3H, Hors Poussière : 1h",
     finishes: ["Sablé Nacré"],
     features: ["Bon pouvoir couvrant", "Peinture lessivable"],
-    image: "/prismacolorwebsite/images/Fluorina.png",
+    image: "/images/Fluorina.png",
     fallbackImage: "/src/assets/images/paint_bucket_decor_1780770364551.png",
     dilution: "Prêt à l'emploi. Dilution à l'eau 5% à 10% max.",
     density: "650 ± 50 POISE à 25°C",
@@ -116,7 +116,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-vega-star",
     name: "VEGA STAR",
-    pdfUrl: "/prismacolorwebsite/fiches/VegaStar.pdf",
+    pdfUrl: "/fiches/VegaStar.pdf",
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
@@ -127,7 +127,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Recouvrable : 4h, Hors Poussière : 1h",
     finishes: ["Nacré", "métalisé"],
     features: ["Bon pouvoir couvrant ", "Peinture lessivable"],
-    image: "/prismacolorwebsite/images/VegaStar.png",
+    image: "/images/VegaStar.png",
     fallbackImage: "/src/assets/images/paint_bucket_decor_1780770364551.png",
     dilution: "Prêt à l'emploi. Dilution à l'eau 5% à 10% max.",
     density: "800 ± 100 poises à 25°C",
@@ -140,7 +140,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-beton-a-cire",
     name: "BÉTON À CIRÉ",
-    pdfUrl: "/prismacolorwebsite/fiches/BetonACire.pdf",
+    pdfUrl: "/fiches/BetonACire.pdf",
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
@@ -151,7 +151,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Hors Poussière : 1H, Recouvrable : 12H",
     finishes: ["Lisse" , "Minéral"],
     features: ["Rendement élevé", "Très facile à appliquer", "Très bonne adhérence"],
-    image: "/prismacolorwebsite/images/Vide.png",
+    image: "/images/Vide.png",
     fallbackImage: "/src/assets/images/paint_bucket_decor_1780770364551.png",
     dilution: "Prêt à l'emploi. Dilution à l'eau 20% à 25% max.",
     density: "-",
@@ -164,7 +164,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-onyx",
     name: "ONYX",
-    pdfUrl: "/prismacolorwebsite/fiches/Onyx.pdf", // <--- Le chemin vers votre fichier
+    pdfUrl: "/fiches/Onyx.pdf", // <--- Le chemin vers votre fichier
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
@@ -175,7 +175,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Hors Poussière: 1H, Recouvrable : 4H",
     finishes: ["Satiné", "Marbré"],
     features: ["Bon pouvoir couvrant", "Blancheur très élevée", "Très facile à appliquer"],
-    image: "/prismacolorwebsite/images/Onyx.png",
+    image: "/images/Onyx.png",
     fallbackImage: "/src/assets/images/paint_bucket_decor_1780770364551.png",
     dilution: "Prêt à l'emploi. Dilution à l'eau 5% à 10% max.",
     density: "1400 ± 200 POISE à 25°C",
@@ -188,7 +188,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-prisma-cire",
     name: "PRISMA CIRE",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaCire.pdf", // <--- Le chemin vers votre fichier
+    pdfUrl: "/fiches/PrismaCire.pdf", // <--- Le chemin vers votre fichier
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
@@ -199,7 +199,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec : 24h",
     finishes: ["Brillant"],
     features: ["Très Bonne propriété hydrofuge", "Rendement élevé", "Très facile à appliquer", "Très bonne adhérence"],
-    image: "/prismacolorwebsite/images/Vide.png",
+    image: "/images/Vide.png",
     fallbackImage: "/src/assets/images/paint_bucket_decor_1780770364551.png",
     dilution: "Prêt à l'emploi. Dilution à l'eau 5% à 10% max.",
     density: "1 ± 0.05 Kg/L à 25°C",
@@ -212,7 +212,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-iridium",
     name: "IRIDIUM",
-    pdfUrl: "/prismacolorwebsite/fiches/Iridium.pdf", // <--- Le chemin vers votre fichier
+    pdfUrl: "/fiches/Iridium.pdf", // <--- Le chemin vers votre fichier
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
@@ -223,7 +223,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Hors Poussière: 1H, Recouvrable : 4H",
     finishes: ["Nacré", "métalisé"],
     features: ["Bon pouvoir couvrant ", "Peinture lessivable"],
-    image: "/prismacolorwebsite/images/Iridium.png",
+    image: "/images/Iridium.png",
     fallbackImage: "/src/assets/images/paint_bucket_decor_1780770364551.png",
     dilution: "Prêt à l'emploi. Dilution à l'eau 5% à 10% max.",
     density: "140 ± 5 KU à 25°C",
@@ -236,7 +236,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-mineralia",
     name: "MINERALIA",
-    pdfUrl: "/prismacolorwebsite/fiches/Mineralia.pdf", // <--- Le chemin vers votre fichier
+    pdfUrl: "/fiches/Mineralia.pdf", // <--- Le chemin vers votre fichier
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
@@ -247,7 +247,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Hors Poussière :1h, Recouvrable : 4h",
     finishes: ["Nacré",  "mate"],
     features: [" Aspect mat où nacré selon l'effet réalisé", "Pouvoir couvrant et garnissant élevé"],
-    image: "/prismacolorwebsite/images/Mineralia.png",
+    image: "/images/Mineralia.png",
     fallbackImage: "/src/assets/images/paint_bucket_decor_1780770364551.png",
     dilution: "Prêt à l'emploi. Dilution à l'eau 5% à 10% max.",
     density: "1.65 ± 0.05 Kg/L à 25°C",
@@ -260,7 +260,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-prisma-teinte",
     name: "PRISMA TEINTE",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaTeinte.pdf",
+    pdfUrl: "/fiches/PrismaTeinte.pdf",
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
@@ -284,7 +284,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-prisma-lux",
     name: "PRISMA LUX",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaLux.pdf",
+    pdfUrl: "/fiches/PrismaLux.pdf",
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
@@ -310,7 +310,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-prisma-prim-extra",
     name: "PRISMA PRIM EXTRA",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaPrim.pdf",
+    pdfUrl: "/fiches/PrismaPrim.pdf",
     category: "interior",
     subCategory: "IMPRESSION",
     line: "Gamme Impression",
@@ -321,7 +321,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Hors Poussière : 1h, Sec : 1H  30 min",
     finishes: ["Satiné"],
     features: ["Très Bonne propriété hydrofuge", "Rendement élevé", "Très facile à appliquer", "Très bonne adhérence"],
-    image: "/prismacolorwebsite/images/PrismaPrimExtra.png",
+    image: "/images/PrismaPrimExtra.png",
     fallbackImage: "/src/assets/images/paint_bucket_habitat_1780770319051.png",
     dilution: " 5% à 10 % avec de l'eau à 25 °C. ",
     density: "1 ± 0.05 Kg/L",
@@ -334,7 +334,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-prisma-blanc-fix",
     name: "PRISMA BLANC FIX",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaBlancFix.pdf",
+    pdfUrl: "/fiches/PrismaBlancFix.pdf",
     category: "interior",
     subCategory: "IMPRESSION",
     line: "Gamme Impression",
@@ -345,7 +345,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec  : 1h, Recouvrable : 3h , Hors Poussière : 30 min",
     finishes: ["Satiné"],
     features: ["Très facile à appliquer", "Très bonne adhérence", "Rendement élevé"],
-    image: "/prismacolorwebsite/images/BlancFixe.png",
+    image: "/images/BlancFixe.png",
     fallbackImage: "/src/assets/images/paint_bucket_habitat_1780770319051.png",
     dilution: "Eau claire : 10% à 15% pour pénétration optimale.",
     density: "1 ± 0.05 Kg/L",
@@ -358,7 +358,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-prisma-fondo",
     name: "PRISMA FONDO",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaFondo.pdf",
+    pdfUrl: "/fiches/PrismaFondo.pdf",
     category: "interior",
     subCategory: "IMPRESSION",
     line: "Gamme Impression",
@@ -369,7 +369,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec au toucher : 1h, Recouvrable : 4h",
     finishes: ["Opale Mat"],
     features: ["Crée une accroche rugueuse", "Facilite l'application sur plâtre", "Empêche le glissement d'enduit", "Haute teneur en charges solides"],
-    image: "/prismacolorwebsite/images/PrismaFondo.png",
+    image: "/images/PrismaFondo.png",
     fallbackImage: "/src/assets/images/paint_bucket_habitat_1780770319051.png",
     dilution: "Eau claire : 10% à 15% pour pénétration optimale.",
     density: "1.49 ± 0.05 g/cm³",
@@ -384,7 +384,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-prisma-pate",
     name: "PRISMA PATE",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaPate.pdf",
+    pdfUrl: "/fiches/PrismaPate.pdf",
     category: "interior",
     subCategory: "ENDUIT",
     line: "Gamme Enduits",
@@ -395,7 +395,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Hors poussière : 1h, Recouvrable : 6h",
     finishes: ["Mate"],
     features: ["Très facile à appliquer", "Grand pouvoir garnissant", "Très bonne adhérence", "Pas de frisage" , "Facile à poncer"],
-    image: "/prismacolorwebsite/images/PrismaPate.png",
+    image: "/images/PrismaPate.png",
     fallbackImage: "/src/assets/images/paint_bucket_habitat_1780770319051.png",
     dilution: "5% à 10% avec de l'eau à 25 °C.",
     density: "1.80 ± 0.05 g/cm³",
@@ -408,7 +408,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-prisma-pret",
     name: "PRISMA PRET",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaPret.pdf",
+    pdfUrl: "/fiches/PrismaPret.pdf",
     category: "interior",
     subCategory: "ENDUIT",
     line: "Gamme Enduits",
@@ -419,7 +419,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Hors poussières : 1 H, Recouvrable : 12 H",
     finishes: ["Poudre"],
     features: ["Très facile à appliquer", "Grand pouvoir garnissant.", "Très bonne adhérence.", "Pas de frisage.", "Facile à poncer."],
-    image: "/prismacolorwebsite/images/PrismaPret.png",
+    image: "/images/PrismaPret.png",
     fallbackImage: "/src/assets/images/paint_bucket_habitat_1780770319051.png",
     dilution: "20% à 25% avec de l'eau à 25 °C.",
     density: "-",
@@ -432,7 +432,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-prisma-stop",
     name: "PRISMA STOP",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaStop.pdf",
+    pdfUrl: "/fiches/PrismaStop.pdf",
     category: "interior",
     subCategory: "ENDUIT",
     line: "Gamme Enduits",
@@ -458,7 +458,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-prisma-pores",
     name: "PRISMA PORES",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaPores.pdf",
+    pdfUrl: "/fiches/PrismaPores.pdf",
     category: "interior",
     subCategory: "VERNIS",
     line: "Gamme Vernis",
@@ -469,7 +469,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Hors poussière : 30min , Sec : 4h",
     finishes: ["Satiné "],
     features: [   "Très facile à appliquer.", "Rendement élevé."],
-    image: "/prismacolorwebsite/images/PrismaPores.png",
+    image: "/images/PrismaPores.png",
     fallbackImage: "/src/assets/images/paint_bucket_velours_1780770334628.png",
     dilution: "5 à 30% avec de l'eau à 25 °C.",
     density: "1.03 ± 0.05 Kg/L",
@@ -482,7 +482,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-prisma-wood",
     name: "PRISMA WOOD",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaWood.pdf",
+    pdfUrl: "/fiches/PrismaWood.pdf",
     category: "interior",
     subCategory: "VERNIS",
     line: "Gamme Vernis",
@@ -508,7 +508,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-peinture-antibacterienne",
     name: "PEINTURE ANTIBACTÉRIENNE",
-    pdfUrl: "/prismacolorwebsite/fiches/PeintureAntibacterienne.pdf",
+    pdfUrl: "/fiches/PeintureAntibacterienne.pdf",
     category: "interior",
     subCategory: "HYGIÈNE",
     line: "Gamme Hygiène",
@@ -534,7 +534,7 @@ export const PRODUCTS_DB: Product[] = [
   {
    id: "int-prisma-plast",
     name: "PRISMA PLAST",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaPlast.pdf",
+    pdfUrl: "/fiches/PrismaPlast.pdf",
     category: "interior",
     subCategory: "ACRYLIQUE",
     line: "Gamme Acryliques",
@@ -545,7 +545,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Hors poussières : 15 min, Sec : 30 min, Recouvrable : 3h",
     finishes: ["mate lisse"],
     features: ["Bon pouvoir couvrant", "Rendement élevé"],
-    image: "/prismacolorwebsite/images/PrismaPlast.png",
+    image: "/images/PrismaPlast.png",
     fallbackImage: "/src/assets/images/paint_bucket_velours_1780770334628.png",
     dilution: "5 à 10 % avec d'eau à 25 °C",
     density: "1.78 ± 0.05 Kg/L",
@@ -558,7 +558,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-prisma-vinyl",
     name: "PRISMA VINYL",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaVinyl.pdf",
+    pdfUrl: "/fiches/PrismaVinyl.pdf",
     category: "interior",
     subCategory: "ACRYLIQUE",
     line: "Gamme Acryliques",
@@ -569,7 +569,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec au toucher : 2h, Recouvrable : 6h",
     finishes: ["Satiné", "Mat velouté"],
     features: ["Blancheur mate respirante", "Idéal sur plaques de plâtre", "Bonne opacité en deux passes", "Application fluide sans traînées"],
-    image: "/prismacolorwebsite/images/PrismaVinyl.png",
+    image: "/images/PrismaVinyl.png",
     fallbackImage: "/src/assets/images/paint_bucket_velours_1780770334628.png",
     dilution: "Eau claire : 10% max.",
     density: "1.41 ± 0.05 g/cm³",
@@ -582,7 +582,7 @@ export const PRODUCTS_DB: Product[] = [
   {
    id: "int-ecologia",
     name: "ECOLOGIA",
-    pdfUrl: "/prismacolorwebsite/fiches/Ecologia.pdf",
+    pdfUrl: "/fiches/Ecologia.pdf",
     category: "interior",
     subCategory: "ACRYLIQUE",
     line: "Gamme Acryliques",
@@ -593,7 +593,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Hors poussières : 15 MIN, Sec : 1 H, Recouvrable : 3 H", // [cite: 686, 687, 688]
     finishes: ["mate lisse"], // [cite: 669]
     features: ["Bon pouvoir couvrant", "Peinture lessivable"], // [cite: 665, 666]
-    image: "/prismacolorwebsite/images/Ecologia.png",
+    image: "/images/Ecologia.png",
     fallbackImage: "/src/assets/images/paint_bucket_velours_1780770334628.png",
     dilution: "5 à 10 % avec d'eau à 25 °C", // [cite: 675]
     density: "1.43 ± 0.05 kg/l", // [cite: 672]
@@ -608,7 +608,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-enduit-carrelage",
     name: "ENDUIT CARRELAGE",
-    pdfUrl: "/prismacolorwebsite/fiches/EnduitCarrelage.pdf",
+    pdfUrl: "/fiches/EnduitCarrelage.pdf",
     category: "interior",
     subCategory: "SOLUTIONS",
     line: "Gamme Solutions",
@@ -619,7 +619,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec au toucher : 4h, Circulation : 24h",
     finishes: ["Mat technique", "Brillant structuré"],
     features: ["Adhérence totale sur verre et céramique", "Évite d'enlever l'ancien carrelage", "Préparation résiliente", "Garantit des murs intérieurs plats"],
-    image: "/prismacolorwebsite/images/EnduitCarrelage.png",
+    image: "/images/EnduitCarrelage.png",
     fallbackImage: "/src/assets/images/paint_bucket_facade_1780770349775.png",
     dilution: "Prêt à l'emploi ou dilution selon fiche spécifique.",
     density: "1.52 ± 0.05 g/cm³",
@@ -632,7 +632,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-antifissure",
     name: "ANTIFISSURE",
-    pdfUrl: "/prismacolorwebsite/fiches/AntiFissure.pdf",
+    pdfUrl: "/fiches/AntiFissure.pdf",
     category: "interior",
     subCategory: "SOLUTIONS",
     line: "Gamme Solutions",
@@ -643,7 +643,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec au toucher : 4h, Circulation : 24h",
     finishes: ["Mat technique", "Brillant structuré"],
     features: ["Allongement exceptionnel", "Suit les mouvements de dilatation", "Recouvrable par toutes finitions", "Excellente tenue dans le temps"],
-    image: "/prismacolorwebsite/images/AntiFissure.png",
+    image: "/images/AntiFissure.png",
     fallbackImage: "/src/assets/images/paint_bucket_facade_1780770349775.png",
     dilution: "Prêt à l'emploi ou dilution selon fiche spécifique.",
     density: "1.52 ± 0.05 g/cm³",
@@ -656,7 +656,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-antihumidite",
     name: "ANTIHUMIDITÉ",
-    pdfUrl: "/prismacolorwebsite/fiches/Antihumidité.pdf",
+    pdfUrl: "/fiches/Antihumidité.pdf",
     category: "interior",
     subCategory: "SOLUTIONS",
     line: "Gamme Solutions",
@@ -667,7 +667,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec au toucher : 4h, Circulation : 24h",
     finishes: ["Mat technique", "Brillant structuré"],
     features: ["Directement applicable sur fond humide", "Permet l'évaporation saine de l'eau", "Bloque l'humidité de capillarité", "Traitement curatif absolu"],
-    image: "/prismacolorwebsite/images/Antihumidité.png",
+    image: "/images/Antihumidité.png",
     fallbackImage: "/src/assets/images/paint_bucket_facade_1780770349775.png",
     dilution: "Prêt à l'emploi ou dilution selon fiche spécifique.",
     density: "1.52 ± 0.05 g/cm³",
@@ -680,7 +680,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-fongex",
     name: "FONGEX",
-    pdfUrl: "/prismacolorwebsite/fiches/Fongex.pdf",
+    pdfUrl: "/fiches/Fongex.pdf",
     category: "interior",
     subCategory: "SOLUTIONS",
     line: "Gamme Solutions",
@@ -691,7 +691,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec au toucher : 4h, Circulation : 24h",
     finishes: ["Mat technique", "Brillant structuré"],
     features: ["Action destructrice rapide", "Empêche la réapparition des mousses", "Pénètre profondément le support", "Facile d'application par brosse"],
-    image: "/prismacolorwebsite/images/Fongex.png",
+    image: "/images/Fongex.png",
     fallbackImage: "/src/assets/images/paint_bucket_facade_1780770349775.png",
     dilution: "Prêt à l'emploi ou dilution selon fiche spécifique.",
     density: "1.52 ± 0.05 g/cm³",
@@ -704,7 +704,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-prima-fix",
     name: "PRIMA FIX",
-    pdfUrl: "/prismacolorwebsite/fiches/PrimaFix.pdf",
+    pdfUrl: "/fiches/PrimaFix.pdf",
     category: "interior",
     subCategory: "SOLUTIONS",
     line: "Gamme Solutions",
@@ -728,7 +728,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "int-epoxy",
     name: "EPOXY",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaEpoxy.pdf",
+    pdfUrl: "/fiches/PrismaEpoxy.pdf",
     category: "interior",
     subCategory: "SOLUTIONS",
     line: "Gamme Solutions",
@@ -754,7 +754,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "ext-effet-beton",
     name: "EFFET BETON",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaEffetBeton.pdf",
+    pdfUrl: "/fiches/PrismaEffetBeton.pdf",
     category: "exterior",
     subCategory: "DÉCO",
     line: "Gamme Déco Facade",
@@ -778,7 +778,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "ext-monocouche",
     name: "MONOCOUCHE",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaMonocouche.pdf",
+    pdfUrl: "/fiches/PrismaMonocouche.pdf",
     category: "exterior",
     subCategory: "DÉCO",
     line: "Gamme Déco Facade",
@@ -802,7 +802,7 @@ export const PRODUCTS_DB: Product[] = [
   {
    id: "ext-prisma-rex",
     name: "PRISMA REX",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaRex.pdf",
+    pdfUrl: "/fiches/PrismaRex.pdf",
     category: "exterior",
     subCategory: "DÉCO",
     line: "Gamme Déco Facade",
@@ -828,7 +828,7 @@ export const PRODUCTS_DB: Product[] = [
   {
      id: "ext-prisma-prim-extra",
     name: "PRISMA PRIM EXTRA",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaPrim.pdf",
+    pdfUrl: "/fiches/PrismaPrim.pdf",
     category: "exterior",
     subCategory: "IMPRESSION",
     line: "Gamme Impression Facade",
@@ -839,7 +839,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Hors poussières : 1 H, Sec : 1 H 30 min", 
     finishes: ["Satiné"], 
     features: ["Très Bonne propriété hydrofuge", "Rendement élevé", "Très facile à appliquer", "Très bonne adhérence"], 
-    image: "/prismacolorwebsite/images/PrismaPrimExtra.png",
+    image: "/images/PrismaPrimExtra.png",
     fallbackImage: "/src/assets/images/paint_bucket_habitat_1780770319051.png",
     dilution: "5 à 10 % avec d'eau à 25 °C", 
     density: "1 ± 0.05 Kg/L", 
@@ -852,7 +852,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "ext-blanc-fixe",
     name: "BLANC FIXE",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaBlancFix.pdf",
+    pdfUrl: "/fiches/PrismaBlancFix.pdf",
     category: "exterior",
     subCategory: "IMPRESSION",
     line: "Gamme Impression Facade",
@@ -863,7 +863,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec au toucher : 1h, Recouvrable : 4h",
     finishes: ["Opale Mat"],
     features: ["Neutralise la laitance du béton", "Opacité immense sur fonds foncés", "Excellente tenue aux sels marins", "Améliore la durabilité extérieure"],
-    image: "/prismacolorwebsite/images/BlancFixe.png",
+    image: "/images/BlancFixe.png",
     fallbackImage: "/src/assets/images/paint_bucket_habitat_1780770319051.png",
     dilution: "Eau claire : 10% à 15% pour pénétration optimale.",
     density: "1.49 ± 0.05 g/cm³",
@@ -876,7 +876,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "ext-prima-fixe",
     name: "PRIMA FIXE",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaPrimaFixe.pdf",
+    pdfUrl: "/fiches/PrismaPrimaFixe.pdf",
     category: "exterior",
     subCategory: "IMPRESSION",
     line: "Gamme Impression Facade",
@@ -902,7 +902,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "ext-enduit-facade-lisse",
     name: "ENDUIT FACADE LISSE",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaEnduitFacade.pdf",
+    pdfUrl: "/fiches/PrismaEnduitFacade.pdf",
     category: "exterior",
     subCategory: "ENDUIT",
     line: "Gamme Enduits Facade",
@@ -913,7 +913,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec complet : 12h, Recouvrable : 24h",
     finishes: ["Mat très fin"],
     features: ["Résistance totale aux intempéries", "Ponçage très simple", "Nivellement précis au mortier", "Excellente souplesse d'application"],
-    image: "/prismacolorwebsite/images/EnduitFacadeLisse.png",
+    image: "/images/EnduitFacadeLisse.png",
     fallbackImage: "/src/assets/images/paint_bucket_habitat_1780770319051.png",
     dilution: "Prêt à l'emploi en pâte onctueuse.",
     density: "1.75 ± 0.05 g/cm³",
@@ -926,7 +926,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "ext-enduit-facade-130",
     name: "ENDUIT FACADE 130",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaEnduitFacade.pdf",
+    pdfUrl: "/fiches/PrismaEnduitFacade.pdf",
     category: "exterior",
     subCategory: "ENDUIT",
     line: "Gamme Enduits Facade",
@@ -937,7 +937,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec complet : 12h, Recouvrable : 24h",
     finishes: ["Mat très fin"],
     features: ["Adhérence extraordinaire sur béton brut", "Aucun affaissement de matière", "Retrait réduit contrôlé", "Haut rendement de rattrapage"],
-    image: "/prismacolorwebsite/images/EnduitFacade130.png",
+    image: "/images/EnduitFacade130.png",
     fallbackImage: "/src/assets/images/paint_bucket_habitat_1780770319051.png",
     dilution: "Prêt à l'emploi en pâte onctueuse.",
     density: "1.75 ± 0.05 g/cm³",
@@ -952,7 +952,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "ext-prisma-protect",
     name: "PRISMA PROTECT",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaProtect.pdf",
+    pdfUrl: "/fiches/PrismaProtect.pdf",
     category: "exterior",
     subCategory: "VERNIS",
     line: "Gamme Vernis Facade",
@@ -976,7 +976,7 @@ export const PRODUCTS_DB: Product[] = [
   {
    id: "ext-prisma-vinyl",
     name: "PRISMA VINYL",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaVinyl.pdf",
+    pdfUrl: "/fiches/PrismaVinyl.pdf",
     category: "exterior",
     subCategory: "ACRYLIQUE",
     line: "Gamme Acryliques Facade",
@@ -987,7 +987,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Hors poussières : 15 MIN, Sec : 30 MIN, Recouvrable : 3 H", // [cite: 523, 524, 525]
     finishes: ["mate lisse"], // [cite: 506]
     features: ["Bon pouvoir couvrant", "Peinture lessivable"], // [cite: 502, 503]
-    image: "/prismacolorwebsite/images/PrismaVinyl.png",
+    image: "/images/PrismaVinyl.png",
     fallbackImage: "/src/assets/images/paint_bucket_velours_1780770334628.png",
     dilution: "5 à 10 % avec d'eau à 25 °C", // [cite: 512]
     density: "1.75 ± 0.05 kg/l", // [cite: 509]
@@ -1003,7 +1003,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "ext-prisma-pores",
     name: "PRISMA PORES",
-        pdfUrl: "/prismacolorwebsite/fiches/PrismaPores.pdf", // <--- Le chemin vers votre fichier
+        pdfUrl: "/fiches/PrismaPores.pdf", // <--- Le chemin vers votre fichier
 
     category: "exterior",
     subCategory: "VERNIS",
@@ -1015,7 +1015,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec au toucher : 3h, Recouvrable : 8h",
     finishes: ["Brillant Céleste", "Satiné Soyeux"],
     features: ["Protège le veinage du bois", "Filtre anti-UV de haute performance", "Hydrophobe et microporeux", "Grande facilité de maintenance"],
-    image: "/prismacolorwebsite/images/PrismaPores.png",
+    image: "/images/PrismaPores.png",
     fallbackImage: "/src/assets/images/paint_bucket_velours_1780770334628.png",
     dilution: "Diluant synthétique ou eau à 5% selon la formulation.",
     density: "1.08 ± 0.05 g/cm³",
@@ -1028,7 +1028,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "ext-prisma-wood",
     name: "PRISMA WOOD",
-        pdfUrl: "/prismacolorwebsite/fiches/PrismaWood.pdf", // <--- Le chemin vers votre fichier
+        pdfUrl: "/fiches/PrismaWood.pdf", // <--- Le chemin vers votre fichier
 
     category: "exterior",
     subCategory: "VERNIS",
@@ -1040,7 +1040,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec au toucher : 3h, Recouvrable : 8h",
     finishes: ["Brillant Céleste", "Satiné Soyeux"],
     features: ["Brillant miroir très robuste", "Résistance aux embruns marins", "Absorbeurs d'UV intégrés", "Séchage régulier rapide"],
-    image: "/prismacolorwebsite/images/PrismaWood.png",
+    image: "/images/PrismaWood.png",
     fallbackImage: "/src/assets/images/paint_bucket_velours_1780770334628.png",
     dilution: "Diluant synthétique ou eau à 5% selon la formulation.",
     density: "1.08 ± 0.05 g/cm³",
@@ -1053,7 +1053,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "ext-vernis-pio",
     name: "VERNIS PIO", // J'ai gardé le nom de la classe d'origine comme demandé
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaVernisPolyurethane.pdf",
+    pdfUrl: "/fiches/PrismaVernisPolyurethane.pdf",
     category: "exterior",
     subCategory: "VERNIS",
     line: "Gamme Vernis Facade",
@@ -1077,7 +1077,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "ext-prisma-protect",
     name: "PRISMA PROTECT",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaProtect.pdf", // <--- Le chemin vers votre fichier
+    pdfUrl: "/fiches/PrismaProtect.pdf", // <--- Le chemin vers votre fichier
     category: "exterior",
     subCategory: "VERNIS",
     line: "Gamme Vernis Facade",
@@ -1103,7 +1103,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "ext-antifissure",
     name: "ANTIFISSURE",
-        pdfUrl: "/prismacolorwebsite/fiches/PrismaAntifissure.pdf", // <--- Le chemin vers votre fichier
+        pdfUrl: "/fiches/PrismaAntifissure.pdf", // <--- Le chemin vers votre fichier
 
     category: "exterior",
     subCategory: "SOLUTIONS",
@@ -1115,7 +1115,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec au toucher : 4h, Circulation : 24h",
     finishes: ["Mat technique", "Brillant structuré"],
     features: ["Capacité de pontage jusqu'à 2.5mm", "Imperméabilité totale à l'eau liquide", "Excellente tenue aux amplitudes thermiques", "Fini mat garnissant"],
-    image: "/prismacolorwebsite/images/AntiFissure.png",
+    image: "/images/AntiFissure.png",
     fallbackImage: "/src/assets/images/paint_bucket_facade_1780770349775.png",
     dilution: "Prêt à l'emploi ou dilution selon fiche spécifique.",
     density: "1.52 ± 0.05 g/cm³",
@@ -1128,7 +1128,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "ext-enduit-carrelage",
     name: "ENDUIT CARRELAGE",
-        pdfUrl: "/prismacolorwebsite/fiches/PrismaEnduitCarrelage.pdf", // <--- Le chemin vers votre fichier
+        pdfUrl: "/fiches/PrismaEnduitCarrelage.pdf", // <--- Le chemin vers votre fichier
 
     category: "exterior",
     subCategory: "SOLUTIONS",
@@ -1140,7 +1140,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec au toucher : 4h, Circulation : 24h",
     finishes: ["Mat technique", "Brillant structuré"],
     features: ["Super adhérence ciment-résine", "Résistant au gel-gél extérieur", "Étanchéité secondaire adjointe", "Application à la spatule large"],
-    image: "/prismacolorwebsite/images/EnduitCarrelage.png",
+    image: "/images/EnduitCarrelage.png",
     fallbackImage: "/src/assets/images/paint_bucket_facade_1780770349775.png",
     dilution: "Prêt à l'emploi ou dilution selon fiche spécifique.",
     density: "1.52 ± 0.05 g/cm³",
@@ -1153,7 +1153,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "ext-antihumidite",
     name: "ANTIHUMIDITÉ",
-        pdfUrl: "/prismacolorwebsite/fiches/PrismaAntihumidite.pdf", // <--- Le chemin vers votre fichier
+        pdfUrl: "/fiches/PrismaAntihumidite.pdf", // <--- Le chemin vers votre fichier
 
     category: "exterior",
     subCategory: "SOLUTIONS",
@@ -1165,7 +1165,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec au toucher : 4h, Circulation : 24h",
     finishes: ["Mat technique", "Brillant structuré"],
     features: ["S'oppose aux remontées par capillarité", "Fort pouvoir durcisseur moléculaire", "Idéal contre les dalles poreuses", "Invisible ou recouvrable"],
-    image: "/prismacolorwebsite/images/Antihumidité.png",
+    image: "/images/Antihumidité.png",
     fallbackImage: "/src/assets/images/paint_bucket_facade_1780770349775.png",
     dilution: "Prêt à l'emploi ou dilution selon fiche spécifique.",
     density: "1.52 ± 0.05 g/cm³",
@@ -1178,7 +1178,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "ext-prisma-flex",
     name: "PRISMA FLEX",
-    pdfUrl: "/prismacolorwebsite/fiches/PrismaFlex.pdf",
+    pdfUrl: "/fiches/PrismaFlex.pdf",
     category: "exterior",
     subCategory: "SOLUTIONS",
     line: "Gamme Solutions Facade",
@@ -1189,7 +1189,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Hors poussières : 6 à 8h, Sec : 24h",
     finishes: ["Satiné"],
     features: ["Imperméable à l'eau de ruissellement", "Très bonne résistance aux intempéries", "Grande élasticité qui compense les microfissures et les fissures", "Imperméable à l'eau liquide"],
-    image: "/prismacolorwebsite/images/PrismaFlex.png",
+    image: "/images/PrismaFlex.png",
     fallbackImage: "/src/assets/images/paint_bucket_facade_1780770349775.png",
     dilution: "1ère couche : 30 à 40 % d'eau, 2ème couche : Sans dilution",
     density: "1.25 ± 0.05 Kg/L",
@@ -1202,7 +1202,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "ext-prisma-fibre",
     name: "PRISMA FIBRE",
-        pdfUrl: "/prismacolorwebsite/fiches/CiraMineralia.pdf", // <--- Le chemin vers votre fichier
+        pdfUrl: "/fiches/CiraMineralia.pdf", // <--- Le chemin vers votre fichier
 
     category: "exterior",
     subCategory: "SOLUTIONS",
@@ -1214,7 +1214,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec au toucher : 4h, Circulation : 24h",
     finishes: ["Mat technique", "Brillant structuré"],
     features: ["Résistance extrême à la traction", "Garnissage direct des éclats de béton", "Ponçage facile", "Excellent support d'accroche"],
-    image: "/prismacolorwebsite/images/PrismaFibre.png",
+    image: "/images/PrismaFibre.png",
     fallbackImage: "/src/assets/images/paint_bucket_facade_1780770349775.png",
     dilution: "Prêt à l'emploi ou dilution selon fiche spécifique.",
     density: "1.52 ± 0.05 g/cm³",
@@ -1227,7 +1227,7 @@ export const PRODUCTS_DB: Product[] = [
   {
     id: "ext-izo-10",
     name: "IZO 10",
-        pdfUrl: "/prismacolorwebsite/fiches/CiraMineralia.pdf", // <--- Le chemin vers votre fichier
+        pdfUrl: "/fiches/CiraMineralia.pdf", // <--- Le chemin vers votre fichier
 
     category: "exterior",
     subCategory: "SOLUTIONS",
