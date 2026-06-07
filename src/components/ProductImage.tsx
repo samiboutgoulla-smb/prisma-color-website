@@ -182,7 +182,7 @@ export const ProductImage: React.FC<ProductImageProps> = ({
 
   return (
     <img
-      src={product.image}
+      src={`${import.meta.env.BASE_URL}${product.image.replace(/^\//, '')}`}
       alt={product.name}
       referrerPolicy="no-referrer"
       className={className}

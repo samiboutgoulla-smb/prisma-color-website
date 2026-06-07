@@ -122,12 +122,10 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
   }, [product.id]);
 
   const handleDownload = () => {
-    console.log("Objet produit complet :", product);
-    console.log("Valeur de pdfUrl :", product.pdfUrl);
     if (product.pdfUrl) {
-      // Cela force le téléchargement du fichier
       const link = document.createElement('a');
-      link.href = product.pdfUrl;
+      // On combine la base URL et on retire le premier slash du pdfUrl pour éviter un double slash
+      link.href = `${import.meta.env.BASE_URL}${product.pdfUrl.replace(/^\//, '')}`;
       link.download = `Fiche_Technique_${product.name}.pdf`;
       document.body.appendChild(link);
       link.click();
