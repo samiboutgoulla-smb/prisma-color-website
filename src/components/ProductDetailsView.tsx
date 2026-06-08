@@ -13,7 +13,8 @@ import {
   TrendingUp, 
   FileText, 
   ArrowRight,
-  Info
+  Info,
+  PlayCircle
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -215,7 +216,8 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
             </div>
           </div>
 
-          {/* Buttons: technical datasheet actions list - Bouton unique et fonctionnel */}
+        
+        {/* Buttons: technical datasheet actions list */}
           <div className="flex flex-col gap-3 print:hidden">
             <button
               onClick={handleDownload}
@@ -224,6 +226,19 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
               <Download className="w-4 h-4" />
               Télécharger la Fiche Technique
             </button>
+
+            {/* Nouveau bouton Vidéo d'application */}
+            {product.videoUrl && (
+              <a
+                href={product.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 w-full bg-white border-2 border-gray-200 hover:border-green-600 hover:text-green-700 text-gray-800 text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-xl transition-all shadow-sm cursor-pointer"
+              >
+                <PlayCircle className="w-5 h-5" />
+                Regarder la vidéo d'application
+              </a>
+            )}
           </div>
 
           {/* Interactive Paint Calculator */}
