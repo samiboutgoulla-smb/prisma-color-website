@@ -228,9 +228,9 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
             </button>
 
             {/* Nouveau bouton Vidéo d'application */}
-            {product.videoUrl && (
+            {product.VideoUrl && (
               <a
-                href={product.videoUrl}
+                href={product.VideoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 w-full bg-white border-2 border-gray-200 hover:border-green-600 hover:text-green-700 text-gray-800 text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-xl transition-all shadow-sm cursor-pointer"
