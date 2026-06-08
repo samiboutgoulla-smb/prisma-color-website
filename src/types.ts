@@ -667,7 +667,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Sec au toucher : 4h, Circulation : 24h",
     finishes: ["Mat technique", "Brillant structuré"],
     features: ["Directement applicable sur fond humide", "Permet l'évaporation saine de l'eau", "Bloque l'humidité de capillarité", "Traitement curatif absolu"],
-    image: "/images/Antihumidité.png",
+    image: "/images/Antihumidite.png",
     fallbackImage: "/src/assets/images/paint_bucket_facade_1780770349775.png",
     dilution: "Prêt à l'emploi ou dilution selon fiche spécifique.",
     density: "1.52 ± 0.05 g/cm³",
