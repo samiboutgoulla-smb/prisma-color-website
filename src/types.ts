@@ -454,7 +454,7 @@ export const PRODUCTS_DB: Product[] = [
     dryingTime: "Hors poussière : 1h, Recouvrable : 6h",
     finishes: ["Mate"],
     features: ["Très facile à appliquer", "Pas de frisage", "Bon garnissant", "Très bonne adhérence"],
-    image: "/src/assets/images/regenerated_image_1780776529269.jpg",
+    image: "/images/PrismaStop.png",
     fallbackImage: "/images/PrismaStop.png?v=2",
     dilution: "Prêt à l'emploi ",
     density: "1.90 ± 0.05 g/cm³",
