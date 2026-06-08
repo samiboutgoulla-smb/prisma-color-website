@@ -21,6 +21,7 @@ export interface Product {
   longDescription: string;
   usage: string[];
   pdfUrl?: string;
+  VideoUrl?: string;
 }
 
 export interface Color {
@@ -45,6 +46,7 @@ export const PRODUCTS_DB: Product[] = [
     id: "int-chromia",
     name: "CHROMIA",
     pdfUrl: "/fiches/chromia.pdf", // <--- Le chemin vers votre fichier
+    VideoUrl: "https://youtu.be/yGT2wmVdEJc?si=TL4cM4EKpDtAbpTs", // <-- Ajoute le lien ici
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
@@ -69,6 +71,7 @@ export const PRODUCTS_DB: Product[] = [
     id: "int-cira-mineralia",
     name: "CIRA MINERALIA",
     pdfUrl: "/fiches/CiraMineralia.pdf", // <--- Le chemin vers votre fichier
+        VideoUrl: "https://youtu.be/yGT2wmVdEJc?si=TL4cM4EKpDtAbpTs", // <-- Ajoute le lien ici
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
@@ -93,6 +96,8 @@ export const PRODUCTS_DB: Product[] = [
     id: "int-fluorina",
     name: "FLUORINA",
     pdfUrl: "/fiches/Fluorina.pdf", // <--- Le chemin vers votre fichier
+        VideoUrl: "https://youtu.be/yGT2wmVdEJc?si=TL4cM4EKpDtAbpTs", // <-- Ajoute le lien ici
+
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
@@ -117,6 +122,7 @@ export const PRODUCTS_DB: Product[] = [
     id: "int-vega-star",
     name: "VEGA STAR",
     pdfUrl: "/fiches/VegaStar.pdf",
+    VideoUrl: "https://youtu.be/yGT2wmVdEJc?si=TL4cM4EKpDtAbpTs", // <-- Ajoute le lien ici
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
@@ -165,6 +171,7 @@ export const PRODUCTS_DB: Product[] = [
     id: "int-onyx",
     name: "ONYX",
     pdfUrl: "/fiches/Onyx.pdf", // <--- Le chemin vers votre fichier
+        VideoUrl: "https://youtu.be/yGT2wmVdEJc?si=TL4cM4EKpDtAbpTs", // <-- Ajoute le lien ici
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
@@ -213,6 +220,8 @@ export const PRODUCTS_DB: Product[] = [
     id: "int-iridium",
     name: "IRIDIUM",
     pdfUrl: "/fiches/Iridium.pdf", // <--- Le chemin vers votre fichier
+        VideoUrl: "https://youtu.be/yGT2wmVdEJc?si=TL4cM4EKpDtAbpTs", // <-- Ajoute le lien ici
+
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
@@ -237,6 +246,8 @@ export const PRODUCTS_DB: Product[] = [
     id: "int-mineralia",
     name: "MINERALIA",
     pdfUrl: "/fiches/Mineralia.pdf", // <--- Le chemin vers votre fichier
+        VideoUrl: "https://youtu.be/yGT2wmVdEJc?si=TL4cM4EKpDtAbpTs", // <-- Ajoute le lien ici
+
     category: "interior",
     subCategory: "DÉCO",
     line: "Gamme Déco",
