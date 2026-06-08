@@ -12,7 +12,9 @@ export default function Hero({ onNavigate }: HeroProps) {
     "/prisma-color-website/images/Ecologia.png",
     "/prisma-color-website/images/Fongex.png", 
     "/prisma-color-website/images/Antihumidite.png",
-    "/prisma-color-website/images/PrismaFibre.png"
+    "/prisma-color-website/images/PrismaFibre.png",
+     "/prisma-color-website/images/EffetBeton.png",
+
 
   ];
 
