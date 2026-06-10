@@ -3,30 +3,34 @@ import { ArrowRight } from 'lucide-react';
 
 interface HeroProps {
   onNavigate: (section: string) => void;
-  onNavigateToProduct?: (productId: string) => void; // <-- AJOUTE CETTE LIGNE
+  onNavigateToProduct?: (productId: string) => void; 
 }
 
 export default function Hero({ onNavigate }: HeroProps) {
-  // 1. Liste des chemins de tes images (tu peux utiliser ton dossier hero-carousel si tu l'as créé)
-  const images = [
-    "/images/Ecologia.png",
-    "/images/Fongex.png", 
-    "/images/Antihumidite.png",
-    "/images/PrismaFibre.png"
-
+  // 1. Liste tes images avec leur chemin relatif (SANS le "/" au début)
+  const imageNames = [
+    "images/Ecologia.png",
+    "images/Fongex.png", 
+    "images/Antihumidite.png",
+    "images/PrismaFibre.png"
   ];
 
-  // 2. État pour suivre quelle image afficher
+  // 2. Reconstruit l'URL complète de manière dynamique selon l'environnement
+  const images = imageNames.map(name => `${import.meta.env.BASE_URL}${name}`);
+
+  // 3. État pour suivre quelle image afficher
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // 3. Effet pour changer d'image automatiquement toutes les 3 secondes
+  // 4. Effet pour le défilement automatique du carrousel
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 3000); 
 
-    return () => clearInterval(timer); // Nettoyage propre pour éviter les fuites de mémoire (et les crashs !)
+    return () => clearInterval(timer);
   }, [images.length]);
+
+  // ... Tout le reste de ton fichier (le "return" avec le JSX) reste strictement identique
 
   return (
     <div className="relative pt-[113px] min-h-screen bg-gradient-to-br from-white to-gray-50 overflow-hidden flex flex-col justify-between">
