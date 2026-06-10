@@ -12,7 +12,10 @@ export default function Hero({ onNavigate }: HeroProps) {
     "images/Ecologia.png",
     "images/Fongex.png", 
     "images/Antihumidite.png",
-    "images/PrismaFibre.png"
+    "images/PrismaFibre.png",
+    "images/EffetBeton.png"
+
+
   ];
 
   // 2. Reconstruit l'URL complète de manière dynamique selon l'environnement
