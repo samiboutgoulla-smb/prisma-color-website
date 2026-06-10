@@ -9,11 +9,11 @@ interface HeroProps {
 export default function Hero({ onNavigate }: HeroProps) {
   // 1. Liste tes images avec leur chemin relatif (SANS le "/" au début)
   const imageNames = [
-    "images/Ecologia.png",
-    "images/Fongex.png", 
-    "images/Antihumidite.png",
-    "images/PrismaFibre.png",
-    "images/EffetBeton.png"
+    "images/Ecologia.webp",
+    "images/Fongex.webp", 
+    "images/Antihumidite.webp",
+    "images/PrismaFibre.webp",
+    "images/EffetBeton.webp"
 
 
   ];
