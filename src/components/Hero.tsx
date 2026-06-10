@@ -9,12 +9,10 @@ interface HeroProps {
 export default function Hero({ onNavigate }: HeroProps) {
   // 1. Liste des chemins de tes images (tu peux utiliser ton dossier hero-carousel si tu l'as créé)
   const images = [
-    "/prisma-color-website/images/Ecologia.png",
-    "/prisma-color-website/images/Fongex.png", 
-    "/prisma-color-website/images/Antihumidite.png",
-    "/prisma-color-website/images/PrismaFibre.png",
-     "/prisma-color-website/images/EffetBeton.png",
-
+    "/images/Ecologia.png",
+    "/images/Fongex.png", 
+    "/images/Antihumidite.png",
+    "/images/PrismaFibre.png"
 
   ];
 
