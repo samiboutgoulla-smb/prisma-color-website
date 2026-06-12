@@ -7,14 +7,13 @@ interface HeroProps {
 }
 
 export default function Hero({ onNavigate }: HeroProps) {
-  const images = [
-    "/images/Ecologia.png",
-    "/images/Fongex.png",
-    "/images/antihumidite.png",
-    "/images/PrismaFibre.png",
-    "/images/EffetBeton.png",
+ const images = [
+    `${import.meta.env.BASE_URL}images/Ecologia.png`,
+    `${import.meta.env.BASE_URL}images/Fongex.png`,
+    `${import.meta.env.BASE_URL}images/antihumidite.png`,
+    `${import.meta.env.BASE_URL}images/PrismaFibre.png`,
+    `${import.meta.env.BASE_URL}images/EffetBeton.png`,
   ];
-
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
