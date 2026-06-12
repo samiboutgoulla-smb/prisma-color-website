@@ -14,7 +14,7 @@ import {
   FileText, 
   ArrowRight,
   Info,
-  PlayCircle
+  PlayCircle // <-- Ajoute cette icône
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -123,10 +123,12 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
   }, [product.id]);
 
   const handleDownload = () => {
+    console.log("Objet produit complet :", product);
+    console.log("Valeur de pdfUrl :", product.pdfUrl);
     if (product.pdfUrl) {
+      // Cela force le téléchargement du fichier
       const link = document.createElement('a');
-      // On combine la base URL et on retire le premier slash du pdfUrl pour éviter un double slash
-      link.href = `${import.meta.env.BASE_URL}${product.pdfUrl.replace(/^\//, '')}`;
+      link.href = product.pdfUrl;
       link.download = `Fiche_Technique_${product.name}.pdf`;
       document.body.appendChild(link);
       link.click();
@@ -178,15 +180,15 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
       `}</style>
 
       {/* Breadcrumb Navigation header - Corrigé sans doublon */}
-      <div className="flex items-center justify-between border-b border-gray-100 pb-6 print:hidden">
+      <div className="flex items-center justify-between border-b border-gray-100 dark:border-gray-800 pb-6 print:hidden">
         <button
           onClick={onBack}
-          className="group flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-gray-500 hover:text-green-700 cursor-pointer transition-colors"
+          className="group flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 hover:text-green-700 dark:hover:text-green-400 cursor-pointer transition-colors"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           Retour au catalogue
         </button>
-        <span className="text-xs text-gray-400 font-mono tracking-wider">
+        <span className="text-xs text-gray-400 dark:text-gray-500 font-mono tracking-wider">
           Référence technique / {product.id.toUpperCase()}
         </span>
       </div>
@@ -198,30 +200,29 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
         <div className="lg:col-span-5 space-y-8 print:col-span-12">
           
           {/* Brand/Product Cover Container */}
-          <div className="relative bg-gradient-to-b from-gray-50 to-gray-100/50 border border-gray-100 rounded-2xl overflow-hidden p-8 flex flex-col items-center justify-center min-h-[300px] md:min-h-[420px]">
+          <div className="relative bg-gradient-to-b from-gray-50 to-gray-100/50 dark:from-[#1a1a1f] dark:to-[#111113] border border-gray-100 dark:border-gray-800 rounded-2xl overflow-hidden p-8 flex flex-col items-center justify-center min-h-[300px] md:min-h-[420px]">
             {/* Visual accent circles */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-green-50/40 mix-blend-multiply blur-2xl pointer-events-none" />
-            <div className="absolute top-10 right-10 w-32 h-32 rounded-full bg-amber-50/30 mix-blend-multiply blur-xl pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-green-50/40 dark:bg-green-900/10 mix-blend-multiply dark:mix-blend-normal blur-2xl pointer-events-none" />
+            <div className="absolute top-10 right-10 w-32 h-32 rounded-full bg-amber-50/30 dark:bg-amber-900/10 mix-blend-multiply dark:mix-blend-normal blur-xl pointer-events-none" />
 
             <ProductImage
               product={product}
               className="relative max-h-[220px] md:max-h-[320px] w-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500"
             />
 
-            <div className="absolute bottom-4 left-4 bg-white/80 backdrop-blur-xs border border-gray-100 px-3 py-1.5 rounded-lg">
-              <span className="text-[10px] font-mono text-gray-500 font-semibold uppercase tracking-wider flex items-center gap-1.5">
+            <div className="absolute bottom-4 left-4 bg-white/80 dark:bg-black/50 backdrop-blur-xs border border-gray-100 dark:border-gray-700 px-3 py-1.5 rounded-lg">
+              <span className="text-[10px] font-mono text-gray-500 dark:text-gray-300 font-semibold uppercase tracking-wider flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-ping" />
                 Produit de qualité 
               </span>
             </div>
           </div>
 
-        
         {/* Buttons: technical datasheet actions list */}
           <div className="flex flex-col gap-3 print:hidden">
             <button
               onClick={handleDownload}
-              className="flex items-center justify-center gap-3 w-full bg-[#1c1d1f] hover:bg-green-600 text-white text-xs font-bold uppercase tracking-wider py-4 px-6 rounded-xl transition-all shadow-sm cursor-pointer"
+              className="flex items-center justify-center gap-3 w-full bg-[#1c1d1f] dark:bg-white hover:bg-green-600 dark:hover:bg-green-600 text-white dark:text-gray-900 dark:hover:text-white text-xs font-bold uppercase tracking-wider py-4 px-6 rounded-xl transition-all shadow-sm cursor-pointer"
             >
               <Download className="w-4 h-4" />
               Télécharger la Fiche Technique
@@ -233,31 +234,30 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
                 href={product.VideoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 w-full bg-white border-2 border-gray-200 hover:border-green-600 hover:text-green-700 text-gray-800 text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-xl transition-all shadow-sm cursor-pointer"
+                className="flex items-center justify-center gap-3 w-full bg-white dark:bg-[#1a1a1f] border-2 border-gray-200 dark:border-gray-700 hover:border-green-600 hover:text-green-700 dark:hover:text-green-400 text-gray-800 dark:text-gray-200 text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-xl transition-all shadow-sm cursor-pointer"
               >
                 <PlayCircle className="w-5 h-5" />
                 Regarder la vidéo d'application
               </a>
             )}
           </div>
-
           {/* Interactive Paint Calculator */}
-          <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-xs space-y-4 print:hidden">
-            <div className="flex items-center gap-2.5 border-b border-gray-50 pb-3">
-              <div className="p-1.5 bg-green-50 text-green-700 rounded-lg">
+          <div className="bg-white dark:bg-[#1a1a1f] border border-gray-100 dark:border-gray-800 rounded-2xl p-6 shadow-xs space-y-4 print:hidden">
+            <div className="flex items-center gap-2.5 border-b border-gray-50 dark:border-gray-800 pb-3">
+              <div className="p-1.5 bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-lg">
                 <Calculator className="w-4 h-4" />
               </div>
-              <h4 className="font-serif text-sm font-semibold text-gray-900">Calculateur d'application personnalisé</h4>
+              <h4 className="font-serif text-sm font-semibold text-gray-900 dark:text-white">Calculateur d'application personnalisé</h4>
             </div>
 
-            <p className="text-xs text-gray-500 leading-relaxed font-light">
+            <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed font-light">
               Estimez précisément la quantité nécessaire pour votre chantier de <strong>{product.name}</strong> au rendement théorique de {product.coverage}.
             </p>
 
             <div className="space-y-4 pt-2">
               {/* Row 1: Surface input */}
               <div>
-                <label className="block text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-1.5">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-1.5">
                   Surface à peindre (en m²)
                 </label>
                 <div className="relative">
@@ -267,22 +267,22 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
                     placeholder="Ex: 45"
                     value={surfaceArea}
                     onChange={(e) => setSurfaceArea(e.target.value === '' ? '' : Math.max(0, Number(e.target.value)))}
-                    className="w-full text-sm py-2.5 pl-4 pr-12 rounded-lg border border-gray-200 focus:border-green-600 focus:ring-1 focus:ring-green-600 outline-none transition-all"
+                    className="w-full text-sm py-2.5 pl-4 pr-12 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#111113] text-gray-900 dark:text-white focus:border-green-600 focus:ring-1 focus:ring-green-600 outline-none transition-all"
                   />
-                  <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-gray-400">m²</span>
+                  <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-gray-400 dark:text-gray-500">m²</span>
                 </div>
               </div>
 
               {/* Row 2: Parameters split */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-1.5">
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-1.5">
                     Nombre de couches
                   </label>
                   <select
                     value={layersCount}
                     onChange={(e) => setLayersCount(Number(e.target.value))}
-                    className="w-full text-sm py-2.5 px-3 rounded-lg border border-gray-200 focus:border-green-600 focus:ring-1 focus:ring-green-600 outline-none bg-white transition-all"
+                    className="w-full text-sm py-2.5 px-3 rounded-lg border border-gray-200 dark:border-gray-700 focus:border-green-600 focus:ring-1 focus:ring-green-600 outline-none bg-white dark:bg-[#111113] text-gray-900 dark:text-white transition-all"
                   >
                     <option value={1}>1 couche</option>
                     <option value={2}>2 couches (Conseillé)</option>
@@ -290,13 +290,13 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
                   </select>
                 </div>
                 <div>
-                  <label className="block text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-1.5">
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-1.5">
                     Format disponible
                   </label>
                   <select
                     value={selectedWeight}
                     onChange={(e) => setSelectedWeight(Number(e.target.value))}
-                    className="w-full text-sm py-2.5 px-3 rounded-lg border border-gray-200 focus:border-green-600 focus:ring-1 focus:ring-green-600 outline-none bg-white transition-all"
+                    className="w-full text-sm py-2.5 px-3 rounded-lg border border-gray-200 dark:border-gray-700 focus:border-green-600 focus:ring-1 focus:ring-green-600 outline-none bg-white dark:bg-[#111113] text-gray-900 dark:text-white transition-all"
                   >
                     {conditionnements.map((weight) => (
                       <option key={weight} value={weight}>
@@ -312,20 +312,20 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="p-4 bg-green-50/70 border border-green-100 rounded-xl grid grid-cols-2 gap-4 text-center mt-6"
+                  className="p-4 bg-green-50/70 dark:bg-green-900/20 border border-green-100 dark:border-green-800 rounded-xl grid grid-cols-2 gap-4 text-center mt-6"
                 >
                   <div>
-                    <span className="block text-[10px] uppercase font-bold text-green-700/70 tracking-widest">Total Requis</span>
-                    <span className="text-xl md:text-2xl font-bold text-green-900 font-sans">{totalKgNeeded.toFixed(1)} {totalKgNeeded < 1 ? 'g' : 'kg'}</span>
+                    <span className="block text-[10px] uppercase font-bold text-green-700/70 dark:text-green-400/80 tracking-widest">Total Requis</span>
+                    <span className="text-xl md:text-2xl font-bold text-green-900 dark:text-green-300 font-sans">{totalKgNeeded.toFixed(1)} {totalKgNeeded < 1 ? 'g' : 'kg'}</span>
                   </div>
-                  <div className="border-l border-green-200/50">
-                    <span className="block text-[10px] uppercase font-bold text-green-700/70 tracking-widest">Emballages</span>
-                    <span className="text-xl md:text-2xl font-bold text-green-900 font-sans">{calculatedBuckets} </span>
+                  <div className="border-l border-green-200/50 dark:border-green-800/50">
+                    <span className="block text-[10px] uppercase font-bold text-green-700/70 dark:text-green-400/80 tracking-widest">Emballages</span>
+                    <span className="text-xl md:text-2xl font-bold text-green-900 dark:text-green-300 font-sans">{calculatedBuckets} </span>
                   </div>
                 </motion.div>
               ) : (
-                <div className="p-3 bg-gray-50 border border-gray-100 rounded-xl text-center mt-6">
-                  <span className="text-xs text-gray-400 italic">Saisissez une surface pour lancer l'estimation</span>
+                <div className="p-3 bg-gray-50 dark:bg-[#111113] border border-gray-100 dark:border-gray-800 rounded-xl text-center mt-6">
+                  <span className="text-xs text-gray-400 dark:text-gray-500 italic">Saisissez une surface pour lancer l'estimation</span>
                 </div>
               )}
             </div>
@@ -339,109 +339,109 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
           {/* Main Titles and Badges */}
           <div className="space-y-4">
             <div className="flex flex-wrap gap-2">
-              <span className="text-[10px] font-bold uppercase tracking-widest bg-green-50 text-green-700 border border-green-100 px-3 py-1 rounded-full">
+              <span className="text-[10px] font-bold uppercase tracking-widest bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400 border border-green-100 dark:border-green-800 px-3 py-1 rounded-full">
                 {product.line}
               </span>
               {product.subCategory && (
-                <span className="text-[10px] font-bold uppercase tracking-widest bg-green-50 text-green-850 border border-green-150 px-3 py-1 rounded-full font-mono">
+                <span className="text-[10px] font-bold uppercase tracking-widest bg-green-50 dark:bg-green-900/30 text-green-850 dark:text-green-400 border border-green-150 dark:border-green-800 px-3 py-1 rounded-full font-mono">
                   Spécialité : {product.subCategory}
                 </span>
               )}
-              <span className="text-[10px] font-bold uppercase tracking-widest bg-gray-100 text-gray-700 border border-gray-200 px-3 py-1 rounded-full">
+              <span className="text-[10px] font-bold uppercase tracking-widest bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 px-3 py-1 rounded-full">
                 {product.tag}
               </span>
-              <span className="text-[10px] font-bold uppercase tracking-widest bg-amber-50 text-amber-800 border border-amber-100 px-3 py-1 rounded-full">
+              <span className="text-[10px] font-bold uppercase tracking-widest bg-amber-50 dark:bg-amber-900/30 text-amber-800 dark:text-amber-400 border border-amber-100 dark:border-amber-800 px-3 py-1 rounded-full">
                 Peinture Formulée
               </span>
             </div>
 
-            <h1 className="font-serif text-3xl md:text-5xl text-gray-900 leading-tight">
+            <h1 className="font-serif text-3xl md:text-5xl text-gray-900 dark:text-white leading-tight">
               {product.name}
             </h1>
 
-            <p className="text-gray-500 font-sans text-sm md:text-base font-light leading-relaxed">
+            <p className="text-gray-500 dark:text-gray-400 font-sans text-sm md:text-base font-light leading-relaxed">
               {product.longDescription}
             </p>
           </div>
 
           {/* Technical Sheet Official Data Sheet Table block */}
-          <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-xs">
-            <div className="bg-gray-50 px-6 py-4 border-b border-gray-100 flex items-center justify-between">
-              <h3 className="font-serif text-sm font-semibold text-gray-900 uppercase tracking-widest text-[11px] flex items-center gap-2">
-                <FileText className="w-4 h-4 text-green-700" />
+          <div className="bg-white dark:bg-[#1a1a1f] border border-gray-100 dark:border-gray-800 rounded-2xl overflow-hidden shadow-xs">
+            <div className="bg-gray-50 dark:bg-[#111113] px-6 py-4 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
+              <h3 className="font-serif text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-widest text-[11px] flex items-center gap-2">
+                <FileText className="w-4 h-4 text-green-700 dark:text-green-400" />
                 Fiche de Caractéristiques Nationales (Peinture)
               </h3>
-              <span className="text-[9px] font-mono font-medium text-gray-400 uppercase">Document Certifié</span>
+              <span className="text-[9px] font-mono font-medium text-gray-400 dark:text-gray-500 uppercase">Document Certifié</span>
             </div>
 
-            <div className="divide-y divide-gray-100 font-sans text-xs">
+            <div className="divide-y divide-gray-100 dark:divide-gray-800 font-sans text-xs">
               
               {/* Row 1: Rendement */}
-              <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 transition-colors">
-                <div className="md:col-span-4 text-gray-400 font-bold uppercase tracking-wider text-[10px] flex items-center">
+              <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
+                <div className="md:col-span-4 text-gray-400 dark:text-gray-500 font-bold uppercase tracking-wider text-[10px] flex items-center">
                   Rendement Moyen
                 </div>
-                <div className="md:col-span-8 text-gray-800 font-semibold text-[13px] mt-1 md:mt-0">
+                <div className="md:col-span-8 text-gray-800 dark:text-gray-200 font-semibold text-[13px] mt-1 md:mt-0">
                   {product.coverage}
                 </div>
               </div>
 
               {/* Row 2: Séchage */}
-              <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 transition-colors">
-                <div className="md:col-span-4 text-gray-400 font-bold uppercase tracking-wider text-[10px] flex items-center">
+              <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
+                <div className="md:col-span-4 text-gray-400 dark:text-gray-500 font-bold uppercase tracking-wider text-[10px] flex items-center">
                   Temps de Séchage
                 </div>
-                <div className="md:col-span-8 text-gray-800 font-semibold text-[13px] mt-1 md:mt-0">
+                <div className="md:col-span-8 text-gray-800 dark:text-gray-200 font-semibold text-[13px] mt-1 md:mt-0">
                   {product.dryingTime}
                 </div>
               </div>
 
               {/* Row 3: Finitions */}
-              <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 transition-colors">
-                <div className="md:col-span-4 text-gray-400 font-bold uppercase tracking-wider text-[10px] flex items-center">
+              <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
+                <div className="md:col-span-4 text-gray-400 dark:text-gray-500 font-bold uppercase tracking-wider text-[10px] flex items-center">
                   Finitions / Aspects
                 </div>
-                <div className="md:col-span-8 text-gray-800 font-semibold text-[13px] mt-1 md:mt-0">
+                <div className="md:col-span-8 text-gray-800 dark:text-gray-200 font-semibold text-[13px] mt-1 md:mt-0">
                   {product.finishes.join(' | ')}
                 </div>
               </div>
 
               {/* Row 4: Dilution */}
-              <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 transition-colors">
-                <div className="md:col-span-4 text-gray-400 font-bold uppercase tracking-wider text-[10px] flex items-center">
+              <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
+                <div className="md:col-span-4 text-gray-400 dark:text-gray-500 font-bold uppercase tracking-wider text-[10px] flex items-center">
                   Dilution d'Apprêt
                 </div>
-                <div className="md:col-span-8 text-gray-800 font-medium leading-relaxed mt-1 md:mt-0 whitespace-pre-line">
+                <div className="md:col-span-8 text-gray-800 dark:text-gray-200 font-medium leading-relaxed mt-1 md:mt-0 whitespace-pre-line">
                   {product.dilution}
                 </div>
               </div>
 
               {/* Row 5: Densité */}
-              <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 transition-colors">
-                <div className="md:col-span-4 text-gray-400 font-bold uppercase tracking-wider text-[10px] flex items-center">
+              <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
+                <div className="md:col-span-4 text-gray-400 dark:text-gray-500 font-bold uppercase tracking-wider text-[10px] flex items-center">
                   Densité Spécifique
                 </div>
-                <div className="md:col-span-8 text-gray-800 font-semibold text-[13px] mt-1 md:mt-0">
+                <div className="md:col-span-8 text-gray-800 dark:text-gray-200 font-semibold text-[13px] mt-1 md:mt-0">
                   {product.density}
                 </div>
               </div>
 
               {/* Row 6: Teneur en COV */}
-              <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 transition-colors">
-                <div className="md:col-span-4 text-gray-400 font-bold uppercase tracking-wider text-[10px] flex items-center">
+              <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
+                <div className="md:col-span-4 text-gray-400 dark:text-gray-500 font-bold uppercase tracking-wider text-[10px] flex items-center">
                   Taux Limite de COV
                 </div>
-                <div className="md:col-span-8 text-green-700 font-bold text-[12px] mt-1 md:mt-0">
+                <div className="md:col-span-8 text-green-700 dark:text-green-400 font-bold text-[12px] mt-1 md:mt-0">
                   {product.cov}
                 </div>
               </div>
 
               {/* Row 7: Outils recommandés */}
-              <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 transition-colors">
-                <div className="md:col-span-4 text-gray-400 font-bold uppercase tracking-wider text-[10px] flex items-center">
+              <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
+                <div className="md:col-span-4 text-gray-400 dark:text-gray-500 font-bold uppercase tracking-wider text-[10px] flex items-center">
                   Outils d'Application
                 </div>
-                <div className="md:col-span-8 text-gray-700 font-medium leading-relaxed mt-1 md:mt-0">
+                <div className="md:col-span-8 text-gray-700 dark:text-gray-300 font-medium leading-relaxed mt-1 md:mt-0">
                   {product.outils}
                 </div>
               </div>
@@ -451,20 +451,20 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
 
           {/* Formules et Atouts de Formulation précis */}
           <div className="space-y-4">
-            <h3 className="font-serif text-lg font-medium text-gray-900 border-b border-gray-100 pb-2">
+            <h3 className="font-serif text-lg font-medium text-gray-900 dark:text-white border-b border-gray-100 dark:border-gray-800 pb-2">
               Bénéfices de Formulation Évoluée
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {product.features.map((feat, idx) => (
                 <div 
                   key={idx} 
-                  className="flex items-start gap-3 bg-gray-50/40 border border-gray-50 p-4 rounded-xl leading-relaxed text-xs text-gray-600 hover:bg-green-50/30 hover:border-green-100 transition-colors"
+                  className="flex items-start gap-3 bg-gray-50/40 dark:bg-[#1a1a1f] border border-gray-50 dark:border-gray-800 p-4 rounded-xl leading-relaxed text-xs text-gray-600 dark:text-gray-400 hover:bg-green-50/30 dark:hover:bg-green-900/10 hover:border-green-100 dark:hover:border-green-800 transition-colors"
                 >
-                  <span className="w-5 h-5 bg-green-100 text-green-700 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="w-5 h-5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-400 rounded-full flex items-center justify-center shrink-0 mt-0.5">
                     <Check className="w-3 h-3" />
                   </span>
                   <div>
-                    <span className="font-semibold text-gray-800 block text-[13px] mb-0.5">Atout {idx + 1}</span>
+                    <span className="font-semibold text-gray-800 dark:text-gray-200 block text-[13px] mb-0.5">Atout {idx + 1}</span>
                     <span>{feat}</span>
                   </div>
                 </div>
@@ -473,19 +473,19 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
           </div>
 
           {/* Support Preparation Info Block */}
-          <div className="bg-amber-50/30 border border-amber-100/65 rounded-xl p-6 space-y-3 font-sans text-xs">
-            <h4 className="font-serif text-sm font-semibold text-amber-900 flex items-center gap-2">
-              <Info className="w-4.5 h-4.5 text-amber-700 shrink-0" />
+          <div className="bg-amber-50/30 dark:bg-amber-900/10 border border-amber-100/65 dark:border-amber-800/40 rounded-xl p-6 space-y-3 font-sans text-xs">
+            <h4 className="font-serif text-sm font-semibold text-amber-900 dark:text-amber-400 flex items-center gap-2">
+              <Info className="w-4.5 h-4.5 text-amber-700 dark:text-amber-400 shrink-0" />
               Directives Pratiques de Rénovation et Préparation
             </h4>
-            <p className="text-gray-600 leading-relaxed font-light">
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed font-light">
               {product.preparation}
             </p>
           </div>
 
           {/* Contact Integration CTA container */}
           {onNavigateToContact && (
-            <div className="bg-[#1c1d1f] rounded-2xl p-6 md:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 print:hidden">
+            <div className="bg-[#1c1d1f] dark:bg-[#1a1a1f] dark:border dark:border-gray-800 rounded-2xl p-6 md:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 print:hidden">
               <div className="space-y-1.5 text-center md:text-left">
                 <span className="text-[10px] font-mono uppercase tracking-wider text-green-400">Prise de contact directe</span>
                 <h4 className="font-serif text-xl font-medium">Besoin d'un devis ou d'un conseil technique ?</h4>

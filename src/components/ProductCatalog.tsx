@@ -65,7 +65,7 @@ export default function ProductCatalog({ onNavigateToContact }: ProductCatalogPr
   // If a product is selected, display its dedicated rich technical sheet page instead of a modal!
   if (selectedProduct) {
     return (
-      <section className="py-20 bg-white" id="product-details-container-section">
+      <section className="py-20 bg-white dark:bg-[#111113] transition-colors duration-300" id="product-details-container-section">
         <div className="max-w-7xl mx-auto px-6 md:px-12 animate-fade-in">
           <ProductDetailsView 
             product={selectedProduct} 
@@ -78,16 +78,16 @@ export default function ProductCatalog({ onNavigateToContact }: ProductCatalogPr
   }
 
   return (
-    <section className="py-20 bg-[#fafafa]" id="products-catalog-section">
+    <section className="py-20 bg-[#fafafa] dark:bg-[#111113] transition-colors duration-300" id="products-catalog-section">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Header Title */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="text-xs font-bold uppercase tracking-[0.2em] text-green-600 mb-3">Gamme Premium</div>
-          <h2 className="font-serif text-4xl md:text-5xl text-gray-900 leading-tight">
+          <div className="text-xs font-bold uppercase tracking-[0.2em] text-green-600 dark:text-green-400 mb-3">Gamme Premium</div>
+          <h2 className="font-serif text-4xl md:text-5xl text-gray-900 dark:text-white leading-tight">
             Peintures de haute performance. <br />Des formulations d'excellence.
           </h2>
-          <p className="text-gray-550 font-sans text-sm md:text-base font-light mt-4">
+          <p className="text-gray-550 dark:text-gray-400 font-sans text-sm md:text-base font-light mt-4">
             Découvrez nos revêtements acryliques de haute qualité pour résister parfaitement aux contraintes du climat au Maroc. Des caractéristiques techniques d'excellence.
           </p>
         </div>
@@ -100,8 +100,8 @@ export default function ProductCatalog({ onNavigateToContact }: ProductCatalogPr
               onClick={() => handleCategoryChange(cat.id as any)}
               className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                 activeCategory === cat.id
-                  ? 'bg-[#1c1d1f] text-white shadow-md font-bold'
-                  : 'bg-white border border-gray-100 text-gray-600 hover:bg-gray-100 hover:text-gray-950 font-semibold'
+                  ? 'bg-[#1c1d1f] dark:bg-white text-white dark:text-gray-900 shadow-md font-bold'
+                  : 'bg-white dark:bg-[#1a1a1f] border border-gray-100 dark:border-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-950 dark:hover:text-white font-semibold'
               }`}
             >
               {cat.label}
@@ -123,14 +123,14 @@ export default function ProductCatalog({ onNavigateToContact }: ProductCatalogPr
                 className={`px-3.5 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-1.5 ${
                   activeSubCategory === sub
                     ? 'bg-green-600 text-white shadow-xs'
-                    : 'bg-white border border-gray-100 text-gray-500 hover:bg-gray-50 hover:text-gray-950 shadow-[0_1px_2px_rgba(0,0,0,0.02)]'
+                    : 'bg-white dark:bg-[#1a1a1f] border border-gray-100 dark:border-gray-800 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-950 dark:hover:text-white shadow-[0_1px_2px_rgba(0,0,0,0.02)]'
                 }`}
               >
                 <span>{label}</span>
                 <span className={`text-[9px] px-1.5 py-0.2 rounded-full ${
                   activeSubCategory === sub
                     ? 'bg-green-700 text-white'
-                    : 'bg-gray-100 text-gray-500'
+                    : 'bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-300'
                 }`}>
                   {count}
                 </span>
@@ -145,13 +145,13 @@ export default function ProductCatalog({ onNavigateToContact }: ProductCatalogPr
             <div
               key={p.id}
               onClick={() => setSelectedProduct(p)}
-              className="group bg-white rounded-xl border border-gray-100 hover:border-gray-205/90 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all p-5 cursor-pointer flex flex-col justify-between relative"
+              className="group bg-white dark:bg-[#1a1a1f] rounded-xl border border-gray-100 dark:border-gray-800 hover:border-gray-205/90 dark:hover:border-gray-700 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all p-5 cursor-pointer flex flex-col justify-between relative"
             >
               {/* Card Header details */}
               <div>
                 <div className="flex items-center justify-between mb-4">
                   {/* Category icon picker */}
-                  <div className="w-9 h-9 rounded-lg bg-green-50 text-green-700 flex items-center justify-center">
+                  <div className="w-9 h-9 rounded-lg bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400 flex items-center justify-center">
                     {p.category === 'interior' && <Layers className="w-4.5 h-4.5" />}
                     {p.category === 'exterior' && <Shield className="w-4.5 h-4.5" />}
                     {p.category === 'decor' && <Sparkles className="w-4.5 h-4.5" />}
@@ -159,37 +159,37 @@ export default function ProductCatalog({ onNavigateToContact }: ProductCatalogPr
                   </div>
                   
                   {/* Floating Action Arrow */}
-                  <span className="w-7 h-7 rounded-full border border-gray-200 group-hover:border-green-650 text-gray-400 group-hover:text-green-650 flex items-center justify-center transition-all">
+                  <span className="w-7 h-7 rounded-full border border-gray-200 dark:border-gray-700 group-hover:border-green-650 text-gray-400 dark:text-gray-500 group-hover:text-green-650 flex items-center justify-center transition-all">
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
 
                 {/* Paint Bucket Image Container */}
-                <div className="relative aspect-[4/3] bg-gradient-to-b from-gray-50/70 to-gray-100/45 border border-gray-50/70 rounded-lg overflow-hidden mb-5 flex items-center justify-center p-4">
+                <div className="relative aspect-[4/3] bg-gradient-to-b from-gray-50/70 to-gray-100/45 dark:from-gray-800/40 dark:to-gray-900/40 border border-gray-50/70 dark:border-gray-800 rounded-lg overflow-hidden mb-5 flex items-center justify-center p-4">
                   <ProductImage 
                     product={p} 
                     className="max-h-[110px] md:max-h-[130px] w-auto drop-shadow-xl group-hover:scale-105 transition-transform duration-500"
                     style={index === 0 || index === 2 ? { width: '198px' } : undefined}
                   />
-                  <div className="absolute top-2.5 right-2.5 bg-white/80 backdrop-blur-3xl px-2 py-0.5 rounded text-[8px] font-bold text-gray-500 uppercase tracking-widest border border-gray-100 font-mono">
+                  <div className="absolute top-2.5 right-2.5 bg-white/80 dark:bg-black/50 backdrop-blur-3xl px-2 py-0.5 rounded text-[8px] font-bold text-gray-500 dark:text-gray-300 uppercase tracking-widest border border-gray-100 dark:border-gray-700 font-mono">
                     {p.tag}
                   </div>
                 </div>
 
-                <div className="text-gray-400 text-[9px] uppercase font-bold tracking-widest">{p.line}</div>
-                <h3 className="font-serif text-base text-gray-900 mt-1 mb-2.5 group-hover:text-green-700 transition-colors font-semibold">{p.name}</h3>
-                <p className="text-gray-500 font-sans text-xs leading-relaxed mb-4 font-light">{p.description}</p>
+                <div className="text-gray-400 dark:text-gray-500 text-[9px] uppercase font-bold tracking-widest">{p.line}</div>
+                <h3 className="font-serif text-base text-gray-900 dark:text-white mt-1 mb-2.5 group-hover:text-green-700 dark:group-hover:text-green-400 transition-colors font-semibold">{p.name}</h3>
+                <p className="text-gray-500 dark:text-gray-400 font-sans text-xs leading-relaxed mb-4 font-light">{p.description}</p>
               </div>
 
               {/* Card Footer tags and Direct Technical Sheet Button */}
-              <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-3">
-                <span className="text-[10px] text-gray-400 font-semibold font-sans">{p.coverage}</span>
+              <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-800 mt-3">
+                <span className="text-[10px] text-gray-400 dark:text-gray-500 font-semibold font-sans">{p.coverage}</span>
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     setSelectedProduct(p);
                   }}
-                  className="flex items-center gap-1.5 bg-green-50 hover:bg-green-600 text-green-750 hover:text-white text-[9.5px] font-bold uppercase tracking-wider px-3.5 py-2 rounded-lg cursor-pointer transition-all border border-green-100 hover:border-green-600"
+                  className="flex items-center gap-1.5 bg-green-50 dark:bg-green-900/30 hover:bg-green-600 text-green-750 dark:text-green-400 hover:text-white text-[9.5px] font-bold uppercase tracking-wider px-3.5 py-2 rounded-lg cursor-pointer transition-all border border-green-100 dark:border-green-800 hover:border-green-600"
                   id={`btn-fiche-${p.id}`}
                 >
                   Fiche Technique
