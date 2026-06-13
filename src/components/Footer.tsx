@@ -2,6 +2,7 @@ import React from 'react';
 import logoLight from '../assets/images/logo.png';
 import logoDark from '../assets/images/logo-dark.png';
 import { useTheme } from '../App';
+import { useLanguage } from '../context/LanguageContext';
 
 interface FooterProps {
   onNavigate: (section: string) => void;
@@ -9,6 +10,14 @@ interface FooterProps {
 
 export default function Footer({ onNavigate }: FooterProps) {
   const { dark } = useTheme();
+  const { t } = useLanguage();
+
+  const productLabels = [
+    t('footer_products_1'),
+    t('footer_products_2'),
+    t('footer_products_3'),
+    t('footer_products_4'),
+  ];
 
   return (
     <footer className="bg-gray-100 dark:bg-[#0d0d0f] border-t border-gray-200 dark:border-gray-800 py-16 px-6 md:px-12 text-left text-gray-600 dark:text-gray-400 font-sans text-xs transition-colors duration-300" style={{ minHeight: '378.156px' }}>
@@ -31,7 +40,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           </div>
 
           <p className="text-gray-500 dark:text-gray-500 leading-relaxed font-light max-w-sm mt-3">
-            Fabricant de peintures de haute qualité pour les professionnels du bâtiment, architectes, applicateurs agréés et particuliers exigeants au Maroc.
+            {t('footer_brand_desc')}
           </p>
 
           {/* Social links */}
@@ -56,9 +65,9 @@ export default function Footer({ onNavigate }: FooterProps) {
 
         {/* Products col */}
         <div className="space-y-4">
-          <h5 className="text-[10px] uppercase tracking-wider font-extrabold text-gray-900 dark:text-white">Produits</h5>
+          <h5 className="text-[10px] uppercase tracking-wider font-extrabold text-gray-900 dark:text-white">{t('footer_products_title')}</h5>
           <ul className="space-y-2 font-medium">
-            {['Fiche Habitat Intérieur', 'Acryliques Façade Extérieure', 'Enduits décoratifs & Tadelakt', 'Gamme Technique Spéciaux'].map((label) => (
+            {productLabels.map((label) => (
               <li key={label}>
                 <button onClick={() => onNavigate('products')} className="hover:text-green-600 dark:hover:text-green-400 cursor-pointer transition-colors">
                   {label}
@@ -70,11 +79,11 @@ export default function Footer({ onNavigate }: FooterProps) {
 
         {/* Company col */}
         <div className="space-y-4">
-          <h5 className="text-[10px] uppercase tracking-wider font-extrabold text-gray-900 dark:text-white">Notre Entreprise</h5>
+          <h5 className="text-[10px] uppercase tracking-wider font-extrabold text-gray-900 dark:text-white">{t('footer_company_title')}</h5>
           <ul className="space-y-2 font-medium">
             <li>
               <button onClick={() => onNavigate('factory')} className="hover:text-green-600 dark:hover:text-green-400 cursor-pointer transition-colors">
-                Notre usine de Meknès
+                {t('footer_company_1')}
               </button>
             </li>
           </ul>
@@ -82,21 +91,21 @@ export default function Footer({ onNavigate }: FooterProps) {
 
         {/* Contact col */}
         <div className="space-y-4">
-          <h5 className="text-[10px] uppercase tracking-wider font-extrabold text-gray-900 dark:text-white">Contact</h5>
+          <h5 className="text-[10px] uppercase tracking-wider font-extrabold text-gray-900 dark:text-white">{t('footer_contact_title')}</h5>
           <ul className="space-y-2 font-medium">
             <li>
               <button onClick={() => onNavigate('contact')} className="hover:text-green-600 dark:hover:text-green-400 cursor-pointer transition-colors">
-                Demande de devis gratuit
+                {t('footer_contact_1')}
               </button>
             </li>
             <li>
               <button onClick={() => onNavigate('contact')} className="hover:text-green-600 dark:hover:text-green-400 cursor-pointer transition-colors">
-                Support technique chantier
+                {t('footer_contact_2')}
               </button>
             </li>
             <li className="text-[10px] text-gray-400 dark:text-gray-600 font-normal leading-normal pt-2 border-t border-gray-200 dark:border-gray-800">
-              Meknès, Route 34, Maroc<br />
-              Tél: +212 (0)666-342212
+              {t('footer_contact_address')}<br />
+              {t('footer_contact_tel')}
             </li>
           </ul>
         </div>
@@ -105,10 +114,10 @@ export default function Footer({ onNavigate }: FooterProps) {
 
       {/* Copyright bar */}
       <div className="max-w-7xl mx-auto border-t border-gray-200 dark:border-gray-800 mt-12 pt-6 flex flex-wrap justify-between items-center gap-4 text-[11px] text-gray-400 dark:text-gray-600">
-        <p>© {new Date().getFullYear()} PRISMA COLOR Maroc. Tous droits réservés.</p>
+        <p>© {new Date().getFullYear()} {t('footer_copyright')}</p>
         <div className="flex gap-4">
-          <span className="hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer">Mentions Légales</span>
-          <span className="hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer">Politique de Confidentialité</span>
+          <span className="hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer">{t('footer_legal')}</span>
+          <span className="hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer">{t('footer_privacy')}</span>
         </div>
       </div>
     </footer>

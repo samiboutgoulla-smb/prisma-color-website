@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function FactorySection() {
   const [activeStep, setActiveStep] = useState(0);
+  const { t } = useLanguage();
 
   const steps = [
     {
       num: "01",
-      title: "Recherche & Développement",
-      desc: "Grâce à un laboratoire de pointe et des partenariats européens stratégiques, PRISMA COLOR développe des solutions de revêtement innovantes. Le choix d'une haute performance durable et respectueuse de l'environnement."
+      title: t('factory_step_1_title'),
+      desc: t('factory_step_1_desc')
     },
     {
       num: "02",
-      title: "Équipement de Production",
-      desc: "Doté d'équipements de haute qualité, PRISMA COLOR produit tous types de peintures. Notre grande capacité de production nous permet de répondre efficacement et rapidement à tous vos besoins."
+      title: t('factory_step_2_title'),
+      desc: t('factory_step_2_desc')
     },
     {
       num: "03",
-      title: "Contrôle de qualité",
-      desc: "Grâce à notre station de traitement d'eau Osmosis et à nos équipements de contrôle rigoureux, PRISMA COLOR vous garantit un produit fini d'exception et une qualité constante au fil du temps."
+      title: t('factory_step_3_title'),
+      desc: t('factory_step_3_desc')
     }
   ];
 
@@ -27,12 +29,12 @@ export default function FactorySection() {
 
         {/* Section Header */}
         <div className="text-left max-w-3xl mb-16">
-          <div className="text-xs font-bold uppercase tracking-[0.2em] text-green-600 dark:text-green-400 mb-3">Savoir-Faire Industriel</div>
+          <div className="text-xs font-bold uppercase tracking-[0.2em] text-green-600 dark:text-green-400 mb-3">{t('factory_badge')}</div>
           <h2 className="font-serif text-4xl md:text-5xl text-gray-900 dark:text-white leading-tight">
-            Une unité moderne de production <br />synonyme d'excellence.
+            {t('factory_title_l1')} <br />{t('factory_title_l2')}
           </h2>
           <p className="text-gray-500 dark:text-gray-400 font-sans text-sm md:text-base font-light mt-4">
-            Notre site industriel de pointe allie automatisation technologique, laboratoires R&D de premier niveau et contrôles qualité appliqués à chaque lot de production.
+            {t('factory_subtitle')}
           </p>
         </div>
 

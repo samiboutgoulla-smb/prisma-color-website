@@ -17,6 +17,7 @@ import {
   PlayCircle // <-- Ajoute cette icône
 } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface ProductDetailsViewProps {
   product: Product;
@@ -108,6 +109,8 @@ const formatWeightLabel = (weight: number): string => {
 };
 
 export default function ProductDetailsView({ product, onBack, onNavigateToContact }: ProductDetailsViewProps) {
+const { t, lang } = useLanguage();
+
   // Détermination des conditionnements disponibles pour ce produit
   const conditionnements = getConditionnementsInKg(product.name);
 
@@ -134,7 +137,7 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
       link.click();
       document.body.removeChild(link);
     } else {
-      alert("Aucune fiche technique disponible pour ce produit.");
+      alert(t('pd_no_pdf_alert'));
     }
   };
 
@@ -186,10 +189,10 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
           className="group flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 hover:text-green-700 dark:hover:text-green-400 cursor-pointer transition-colors"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          Retour au catalogue
+          {t('pd_back')}
         </button>
         <span className="text-xs text-gray-400 dark:text-gray-500 font-mono tracking-wider">
-          Référence technique / {product.id.toUpperCase()}
+          {t('pd_reference')} / {product.id.toUpperCase()}
         </span>
       </div>
 
@@ -213,7 +216,7 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
             <div className="absolute bottom-4 left-4 bg-white/80 dark:bg-black/50 backdrop-blur-xs border border-gray-100 dark:border-gray-700 px-3 py-1.5 rounded-lg">
               <span className="text-[10px] font-mono text-gray-500 dark:text-gray-300 font-semibold uppercase tracking-wider flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-ping" />
-                Produit de qualité 
+                {t('pd_quality_badge')}
               </span>
             </div>
           </div>
@@ -225,7 +228,7 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
               className="flex items-center justify-center gap-3 w-full bg-[#1c1d1f] dark:bg-white hover:bg-green-600 dark:hover:bg-green-600 text-white dark:text-gray-900 dark:hover:text-white text-xs font-bold uppercase tracking-wider py-4 px-6 rounded-xl transition-all shadow-sm cursor-pointer"
             >
               <Download className="w-4 h-4" />
-              Télécharger la Fiche Technique
+              {t('pd_download_btn')}
             </button>
 
             {/* Nouveau bouton Vidéo d'application */}
@@ -237,7 +240,7 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
                 className="flex items-center justify-center gap-3 w-full bg-white dark:bg-[#1a1a1f] border-2 border-gray-200 dark:border-gray-700 hover:border-green-600 hover:text-green-700 dark:hover:text-green-400 text-gray-800 dark:text-gray-200 text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-xl transition-all shadow-sm cursor-pointer"
               >
                 <PlayCircle className="w-5 h-5" />
-                Regarder la vidéo d'application
+                {t('pd_video_btn')}
               </a>
             )}
           </div>
@@ -247,18 +250,18 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
               <div className="p-1.5 bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-lg">
                 <Calculator className="w-4 h-4" />
               </div>
-              <h4 className="font-serif text-sm font-semibold text-gray-900 dark:text-white">Calculateur d'application personnalisé</h4>
+              <h4 className="font-serif text-sm font-semibold text-gray-900 dark:text-white">{t('pd_calc_title')}</h4>
             </div>
 
             <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed font-light">
-              Estimez précisément la quantité nécessaire pour votre chantier de <strong>{product.name}</strong> au rendement théorique de {product.coverage}.
+              {t('pd_calc_desc_pre')} <strong>{product.name}</strong> {t('pd_calc_desc_post')} {product.coverage}.
             </p>
 
             <div className="space-y-4 pt-2">
               {/* Row 1: Surface input */}
               <div>
                 <label className="block text-[11px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-1.5">
-                  Surface à peindre (en m²)
+                  {t('pd_calc_surface_label')}
                 </label>
                 <div className="relative">
                   <input
@@ -277,21 +280,21 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-[11px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-1.5">
-                    Nombre de couches
+                    {t('pd_calc_layers_label')}
                   </label>
                   <select
                     value={layersCount}
                     onChange={(e) => setLayersCount(Number(e.target.value))}
                     className="w-full text-sm py-2.5 px-3 rounded-lg border border-gray-200 dark:border-gray-700 focus:border-green-600 focus:ring-1 focus:ring-green-600 outline-none bg-white dark:bg-[#111113] text-gray-900 dark:text-white transition-all"
                   >
-                    <option value={1}>1 couche</option>
-                    <option value={2}>2 couches (Conseillé)</option>
-                    <option value={3}>3 couches</option>
+                    <option value={1}>{t('pd_calc_layer_1')}</option>
+                    <option value={2}>{t('pd_calc_layer_2')}</option>
+                    <option value={3}>{t('pd_calc_layer_3')}</option>
                   </select>
                 </div>
                 <div>
                   <label className="block text-[11px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-1.5">
-                    Format disponible
+                    {t('pd_calc_format_label')}
                   </label>
                   <select
                     value={selectedWeight}
@@ -315,17 +318,17 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
                   className="p-4 bg-green-50/70 dark:bg-green-900/20 border border-green-100 dark:border-green-800 rounded-xl grid grid-cols-2 gap-4 text-center mt-6"
                 >
                   <div>
-                    <span className="block text-[10px] uppercase font-bold text-green-700/70 dark:text-green-400/80 tracking-widest">Total Requis</span>
+                    <span className="block text-[10px] uppercase font-bold text-green-700/70 dark:text-green-400/80 tracking-widest">{t('pd_calc_total_label')}</span>
                     <span className="text-xl md:text-2xl font-bold text-green-900 dark:text-green-300 font-sans">{totalKgNeeded.toFixed(1)} {totalKgNeeded < 1 ? 'g' : 'kg'}</span>
                   </div>
                   <div className="border-l border-green-200/50 dark:border-green-800/50">
-                    <span className="block text-[10px] uppercase font-bold text-green-700/70 dark:text-green-400/80 tracking-widest">Emballages</span>
+                    <span className="block text-[10px] uppercase font-bold text-green-700/70 dark:text-green-400/80 tracking-widest">{t('pd_calc_packages_label')}</span>
                     <span className="text-xl md:text-2xl font-bold text-green-900 dark:text-green-300 font-sans">{calculatedBuckets} </span>
                   </div>
                 </motion.div>
               ) : (
                 <div className="p-3 bg-gray-50 dark:bg-[#111113] border border-gray-100 dark:border-gray-800 rounded-xl text-center mt-6">
-                  <span className="text-xs text-gray-400 dark:text-gray-500 italic">Saisissez une surface pour lancer l'estimation</span>
+                  <span className="text-xs text-gray-400 dark:text-gray-500 italic">{t('pd_calc_placeholder')}</span>
                 </div>
               )}
             </div>
@@ -340,18 +343,18 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
           <div className="space-y-4">
             <div className="flex flex-wrap gap-2">
               <span className="text-[10px] font-bold uppercase tracking-widest bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400 border border-green-100 dark:border-green-800 px-3 py-1 rounded-full">
-                {product.line}
+                {product.line[lang]}
               </span>
               {product.subCategory && (
                 <span className="text-[10px] font-bold uppercase tracking-widest bg-green-50 dark:bg-green-900/30 text-green-850 dark:text-green-400 border border-green-150 dark:border-green-800 px-3 py-1 rounded-full font-mono">
-                  Spécialité : {product.subCategory}
+                  {t('pd_specialty')} : {product.subCategory}
                 </span>
               )}
               <span className="text-[10px] font-bold uppercase tracking-widest bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 px-3 py-1 rounded-full">
                 {product.tag}
               </span>
               <span className="text-[10px] font-bold uppercase tracking-widest bg-amber-50 dark:bg-amber-900/30 text-amber-800 dark:text-amber-400 border border-amber-100 dark:border-amber-800 px-3 py-1 rounded-full">
-                Peinture Formulée
+                {t('pd_formulated_paint')}
               </span>
             </div>
 
@@ -360,7 +363,7 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
             </h1>
 
             <p className="text-gray-500 dark:text-gray-400 font-sans text-sm md:text-base font-light leading-relaxed">
-              {product.longDescription}
+              {product.longDescription[lang]}
             </p>
           </div>
 
@@ -369,9 +372,9 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
             <div className="bg-gray-50 dark:bg-[#111113] px-6 py-4 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
               <h3 className="font-serif text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-widest text-[11px] flex items-center gap-2">
                 <FileText className="w-4 h-4 text-green-700 dark:text-green-400" />
-                Fiche de Caractéristiques Nationales (Peinture)
+                {t('pd_sheet_title')}
               </h3>
-              <span className="text-[9px] font-mono font-medium text-gray-400 dark:text-gray-500 uppercase">Document Certifié</span>
+              <span className="text-[9px] font-mono font-medium text-gray-400 dark:text-gray-500 uppercase">{t('pd_sheet_certified')}</span>
             </div>
 
             <div className="divide-y divide-gray-100 dark:divide-gray-800 font-sans text-xs">
@@ -379,7 +382,7 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
               {/* Row 1: Rendement */}
               <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
                 <div className="md:col-span-4 text-gray-400 dark:text-gray-500 font-bold uppercase tracking-wider text-[10px] flex items-center">
-                  Rendement Moyen
+                  {t('pd_row_rendement')}
                 </div>
                 <div className="md:col-span-8 text-gray-800 dark:text-gray-200 font-semibold text-[13px] mt-1 md:mt-0">
                   {product.coverage}
@@ -389,7 +392,7 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
               {/* Row 2: Séchage */}
               <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
                 <div className="md:col-span-4 text-gray-400 dark:text-gray-500 font-bold uppercase tracking-wider text-[10px] flex items-center">
-                  Temps de Séchage
+                  {t('pd_row_sechage')}
                 </div>
                 <div className="md:col-span-8 text-gray-800 dark:text-gray-200 font-semibold text-[13px] mt-1 md:mt-0">
                   {product.dryingTime}
@@ -399,7 +402,7 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
               {/* Row 3: Finitions */}
               <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
                 <div className="md:col-span-4 text-gray-400 dark:text-gray-500 font-bold uppercase tracking-wider text-[10px] flex items-center">
-                  Finitions / Aspects
+                  {t('pd_row_finitions')}
                 </div>
                 <div className="md:col-span-8 text-gray-800 dark:text-gray-200 font-semibold text-[13px] mt-1 md:mt-0">
                   {product.finishes.join(' | ')}
@@ -409,7 +412,7 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
               {/* Row 4: Dilution */}
               <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
                 <div className="md:col-span-4 text-gray-400 dark:text-gray-500 font-bold uppercase tracking-wider text-[10px] flex items-center">
-                  Dilution d'Apprêt
+                  {t('pd_row_dilution')}
                 </div>
                 <div className="md:col-span-8 text-gray-800 dark:text-gray-200 font-medium leading-relaxed mt-1 md:mt-0 whitespace-pre-line">
                   {product.dilution}
@@ -419,7 +422,7 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
               {/* Row 5: Densité */}
               <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
                 <div className="md:col-span-4 text-gray-400 dark:text-gray-500 font-bold uppercase tracking-wider text-[10px] flex items-center">
-                  Densité Spécifique
+                  {t('pd_row_densite')}
                 </div>
                 <div className="md:col-span-8 text-gray-800 dark:text-gray-200 font-semibold text-[13px] mt-1 md:mt-0">
                   {product.density}
@@ -429,7 +432,7 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
               {/* Row 6: Teneur en COV */}
               <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
                 <div className="md:col-span-4 text-gray-400 dark:text-gray-500 font-bold uppercase tracking-wider text-[10px] flex items-center">
-                  Taux Limite de COV
+                  {t('pd_row_cov')}
                 </div>
                 <div className="md:col-span-8 text-green-700 dark:text-green-400 font-bold text-[12px] mt-1 md:mt-0">
                   {product.cov}
@@ -439,10 +442,10 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
               {/* Row 7: Outils recommandés */}
               <div className="grid grid-cols-1 md:grid-cols-12 p-4 hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
                 <div className="md:col-span-4 text-gray-400 dark:text-gray-500 font-bold uppercase tracking-wider text-[10px] flex items-center">
-                  Outils d'Application
+                  {t('pd_row_outils')}
                 </div>
                 <div className="md:col-span-8 text-gray-700 dark:text-gray-300 font-medium leading-relaxed mt-1 md:mt-0">
-                  {product.outils}
+                  {product.outils[lang]}
                 </div>
               </div>
 
@@ -452,7 +455,7 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
           {/* Formules et Atouts de Formulation précis */}
           <div className="space-y-4">
             <h3 className="font-serif text-lg font-medium text-gray-900 dark:text-white border-b border-gray-100 dark:border-gray-800 pb-2">
-              Bénéfices de Formulation Évoluée
+              {t('pd_benefits_title')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {product.features.map((feat, idx) => (
@@ -464,8 +467,8 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
                     <Check className="w-3 h-3" />
                   </span>
                   <div>
-                    <span className="font-semibold text-gray-800 dark:text-gray-200 block text-[13px] mb-0.5">Atout {idx + 1}</span>
-                    <span>{feat}</span>
+                    <span className="font-semibold text-gray-800 dark:text-gray-200 block text-[13px] mb-0.5">{t('pd_atout')} {idx + 1}</span>
+                    <span>{feat[lang]}</span>
                   </div>
                 </div>
               ))}
@@ -476,10 +479,10 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
           <div className="bg-amber-50/30 dark:bg-amber-900/10 border border-amber-100/65 dark:border-amber-800/40 rounded-xl p-6 space-y-3 font-sans text-xs">
             <h4 className="font-serif text-sm font-semibold text-amber-900 dark:text-amber-400 flex items-center gap-2">
               <Info className="w-4.5 h-4.5 text-amber-700 dark:text-amber-400 shrink-0" />
-              Directives Pratiques de Rénovation et Préparation
+              {t('pd_prep_title')}
             </h4>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed font-light">
-              {product.preparation}
+              {product.preparation[lang]}
             </p>
           </div>
 
@@ -487,17 +490,17 @@ export default function ProductDetailsView({ product, onBack, onNavigateToContac
           {onNavigateToContact && (
             <div className="bg-[#1c1d1f] dark:bg-[#1a1a1f] dark:border dark:border-gray-800 rounded-2xl p-6 md:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 print:hidden">
               <div className="space-y-1.5 text-center md:text-left">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-green-400">Prise de contact directe</span>
-                <h4 className="font-serif text-xl font-medium">Besoin d'un devis ou d'un conseil technique ?</h4>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-green-400">{t('pd_cta_badge')}</span>
+                <h4 className="font-serif text-xl font-medium">{t('pd_cta_title')}</h4>
                 <p className="text-xs text-gray-400 font-light leading-relaxed max-w-md">
-                  Notre département technique  vous conseille gratuitement sur le volume optimal pour vos projets résidentiels ou industriels.
+                  {t('pd_cta_desc')}
                 </p>
               </div>
               <button 
                 onClick={onNavigateToContact}
                 className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-xl shadow shrink-0 cursor-pointer transition-all"
               >
-                Formulaire Devis
+                {t('pd_cta_btn')}
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

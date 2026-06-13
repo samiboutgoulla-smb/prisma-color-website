@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface HeroProps {
   onNavigate: (section: string) => void;
@@ -7,6 +8,8 @@ interface HeroProps {
 }
 
 export default function Hero({ onNavigate }: HeroProps) {
+  const { t } = useLanguage();
+
  const images = [
     `${import.meta.env.BASE_URL}images/Ecologia.png`,
     `${import.meta.env.BASE_URL}images/Fongex.png`,
@@ -23,6 +26,13 @@ export default function Hero({ onNavigate }: HeroProps) {
     return () => clearInterval(timer);
   }, [images.length]);
 
+  const stats = [
+    { value: '2000', unit: '+', label: t('hero_stat_1_label') },
+    { value: '+20', unit: 'Ans', label: t('hero_stat_2_label') },
+    { value: '100', unit: '%', label: t('hero_stat_3_label') },
+    { value: '32', unit: '+', label: t('hero_stat_4_label') },
+  ];
+
   return (
     <div className="relative pt-[113px] min-h-screen bg-gradient-to-br from-white to-gray-50 dark:from-[#111113] dark:to-[#18181b] overflow-hidden flex flex-col justify-between transition-colors duration-300">
       {/* Background glow */}
@@ -34,15 +44,15 @@ export default function Hero({ onNavigate }: HeroProps) {
         <div className="flex flex-col space-y-6 md:space-y-8 text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-bold tracking-widest uppercase rounded-full self-start">
             <span className="w-1.5 h-1.5 bg-green-600 rounded-full animate-ping" />
-            Fabricant marocain - plus de 20 ans d'expérience
+            {t('hero_badge')}
           </div>
 
           <h1 className="font-serif text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
-            Plus de 20 ans d'expertise en solutions de peinture innovantes.
+            {t('hero_title')}
           </h1>
 
           <p className="text-gray-500 dark:text-gray-400 font-sans text-sm md:text-base max-w-lg leading-relaxed font-light">
-            Découvrez des gammes de peintures innovantes conçues pour sublimer vos intérieurs et protéger durablement vos façades extérieures.
+            {t('hero_subtitle')}
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
@@ -50,7 +60,7 @@ export default function Hero({ onNavigate }: HeroProps) {
               onClick={() => onNavigate('products')}
               className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-xl shadow-sm transition-all cursor-pointer"
             >
-              Explorer le Catalogue
+              {t('hero_cta')}
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
@@ -69,12 +79,7 @@ export default function Hero({ onNavigate }: HeroProps) {
 
       {/* Stats bar */}
       <div className="bg-white dark:bg-[#18181b] border-t border-gray-100 dark:border-gray-800 py-8 grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto w-full px-6 md:px-12 transition-colors duration-300">
-        {[
-          { value: '2000', unit: '+', label: 'Teintes Disponibles' },
-          { value: '+20', unit: 'Ans', label: "D'Expertise Industrielle" },
-          { value: '100', unit: '%', label: 'Matière de haute Qualité' },
-          { value: '32', unit: '+', label: 'Grands Chantiers Realisés' },
-        ].map((stat, i) => (
+        {stats.map((stat, i) => (
           <div
             key={i}
             className={`text-center lg:text-left pb-6 lg:pb-0 ${

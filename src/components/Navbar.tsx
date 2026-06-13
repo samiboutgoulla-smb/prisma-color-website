@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Menu, X, Landmark, Compass, Phone, Palette, Sun, Moon } from 'lucide-react';
+import { Menu, X, Landmark, Compass, Phone, Palette, Sun, Moon, Globe, Check } from 'lucide-react';
 import logoLight from '../assets/images/logo.png';
 import logoDark from '../assets/images/logo-dark.png';
 import { useTheme } from '../App';
+import { useLanguage } from '../context/LanguageContext';
+import { LANGUAGES } from '../i18n/translations';
 
 interface NavbarProps {
   activeSection: string;
@@ -11,17 +13,27 @@ interface NavbarProps {
 
 export default function Navbar({ activeSection, setActiveSection }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [langMenuOpen, setLangMenuOpen] = useState(false);
   const { dark, toggleDark } = useTheme();
+  const { lang, setLang, t } = useLanguage();
 
   const menuItems = [
-    { id: 'home', label: 'Accueil', icon: Compass },
-    { id: 'products', label: 'Produits', icon: Palette },
-    { id: 'factory', label: 'Notre Usine', icon: Landmark },
-    { id: 'contact', label: 'Contact', icon: Phone },
+    { id: 'home', label: t('nav_home'), icon: Compass },
+    { id: 'products', label: t('nav_products'), icon: Palette },
+    { id: 'factory', label: t('nav_factory'), icon: Landmark },
+    { id: 'contact', label: t('nav_contact'), icon: Phone },
   ];
 
   const handleNavClick = (id: string) => {
     setActiveSection(id);
+    setMobileMenuOpen(false);
+  };
+
+  const currentLangData = LANGUAGES.find((l) => l.code === lang) || LANGUAGES[0];
+
+  const handleLangSelect = (code: typeof lang) => {
+    setLang(code);
+    setLangMenuOpen(false);
     setMobileMenuOpen(false);
   };
 
@@ -64,6 +76,45 @@ export default function Navbar({ activeSection, setActiveSection }: NavbarProps)
             </li>
           );
         })}
+
+        {/* Language selector */}
+        <li className="relative">
+          <button
+            onClick={() => setLangMenuOpen((prev) => !prev)}
+            aria-label={t('nav_language')}
+            className="flex items-center gap-1.5 h-9 px-3 rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 ml-2 text-xs font-bold uppercase tracking-wider"
+          >
+            <Globe className="w-4 h-4" />
+            <span>{currentLangData.flag} {lang.toUpperCase()}</span>
+          </button>
+
+          {langMenuOpen && (
+            <>
+              {/* Backdrop to close on click outside */}
+              <div className="fixed inset-0 z-40" onClick={() => setLangMenuOpen(false)} />
+              <ul className="absolute right-0 mt-2 w-44 bg-white dark:bg-[#1a1a1f] border border-gray-100 dark:border-gray-800 rounded-xl shadow-xl overflow-hidden z-50 animate-fade-in">
+                {LANGUAGES.map((l) => (
+                  <li key={l.code}>
+                    <button
+                      onClick={() => handleLangSelect(l.code)}
+                      className={`w-full flex items-center justify-between gap-2 px-4 py-2.5 text-sm font-medium transition-colors ${
+                        lang === l.code
+                          ? 'bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400'
+                          : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
+                      }`}
+                    >
+                      <span className="flex items-center gap-2">
+                        <span>{l.flag}</span>
+                        <span>{l.label}</span>
+                      </span>
+                      {lang === l.code && <Check className="w-3.5 h-3.5" />}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </li>
 
         {/* Dark mode toggle */}
         <li>
@@ -117,6 +168,33 @@ export default function Navbar({ activeSection, setActiveSection }: NavbarProps)
               </button>
             );
           })}
+
+          {/* Mobile language selector */}
+          <div className="pt-2 border-t border-gray-100 dark:border-gray-800">
+            <div className="px-4 pt-3 pb-2 text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 flex items-center gap-2">
+              <Globe className="w-3.5 h-3.5" />
+              {t('nav_language')}
+            </div>
+            <div className="flex flex-col gap-1">
+              {LANGUAGES.map((l) => (
+                <button
+                  key={l.code}
+                  onClick={() => handleLangSelect(l.code)}
+                  className={`flex items-center justify-between gap-2 px-4 py-3 text-sm font-semibold uppercase tracking-wider rounded-lg transition-colors text-left ${
+                    lang === l.code
+                      ? 'bg-[#1c1d1f] dark:bg-white text-white dark:text-gray-900'
+                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-green-600 dark:hover:text-green-400'
+                  }`}
+                >
+                  <span className="flex items-center gap-2">
+                    <span>{l.flag}</span>
+                    <span>{l.label}</span>
+                  </span>
+                  {lang === l.code && <Check className="w-4 h-4" />}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       )}
     </nav>
