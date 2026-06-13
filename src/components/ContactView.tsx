@@ -39,7 +39,7 @@ export default function ContactView() {
               </div>
               <div>
                 <h4 className="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500">{t('contact_phone_label')}</h4>
-                <a href="tel:+212666342212" className="font-sans font-bold text-base text-gray-900 dark:text-white block hover:text-green-700 dark:hover:text-green-400 mt-1">
+                <a href="tel:+212666342212" dir="ltr" className="font-sans font-bold text-base text-gray-900 dark:text-white block hover:text-green-700 dark:hover:text-green-400 mt-1 text-left">
                   +212 666342212 <br />
                   +212 535451117
                 </a>

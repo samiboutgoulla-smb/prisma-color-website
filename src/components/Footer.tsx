@@ -105,7 +105,10 @@ export default function Footer({ onNavigate }: FooterProps) {
             </li>
             <li className="text-[10px] text-gray-400 dark:text-gray-600 font-normal leading-normal pt-2 border-t border-gray-200 dark:border-gray-800">
               {t('footer_contact_address')}<br />
-              {t('footer_contact_tel')}
+              {t('footer_contact_tel_label')}{' '}
+              <span dir="ltr" style={{ unicodeBidi: 'isolate', direction: 'ltr' }}>
+                {t('footer_contact_tel_number')}
+              </span>
             </li>
           </ul>
         </div>

@@ -24,12 +24,11 @@ export const useTheme = () => useContext(ThemeContext);
 export default function App() {
   const [activeSection, setActiveSection] = useState<string>('home');
   const [targetProductId, setTargetProductId] = useState<string | null>(null);
+  const [showTop, setShowTop] = useState(false);
   const [dark, setDark] = useState<boolean>(() => {
-    // Persist preference in localStorage
     return localStorage.getItem('prisma-theme') === 'dark';
   });
 
-  // Apply / remove the "dark" class on <html> whenever `dark` changes
   useEffect(() => {
     const root = document.documentElement;
     if (dark) {
@@ -41,7 +40,15 @@ export default function App() {
     }
   }, [dark]);
 
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 400);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   const toggleDark = () => setDark((prev) => !prev);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   const handleNavigateToProduct = (productId: string) => {
     setTargetProductId(productId);
@@ -87,6 +94,19 @@ export default function App() {
           </main>
 
           <Footer onNavigate={setActiveSection} />
+
+          {/* Bouton retour en haut */}
+          {showTop && (
+            <button
+              onClick={scrollToTop}
+              aria-label="Retour en haut"
+              className="fixed bottom-6 right-6 z-50 w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-[#1e1e23] border border-gray-200 dark:border-gray-700 shadow-md text-gray-500 dark:text-gray-400 hover:border-green-500 hover:text-green-600 dark:hover:text-green-400 transition-all duration-300 animate-fade-in"
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 12V4M4 7.5l4-4 4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          )}
         </div>
       </LanguageProvider>
     </ThemeContext.Provider>
